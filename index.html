@@ -10,13 +10,13 @@
     <body>
 		<h1 id="game_results">Game results</h1>
 		<table id="game">
-            <tr>
-                <th>Set</th>
-                <th>Team 1</th>
-                <th>Result</th>
-                <th>Team 2</th>
-            </tr>
-        </table>
+      <tr>
+        <th>Set</th>
+        <th>Team 1</th>
+        <th>Result</th>
+        <th>Team 2</th>
+      </tr>
+    </table>
         
 		
         <script id="setTemplate" type="text/template">
@@ -26,17 +26,23 @@
             <td><%= team2 %></td>
         </script>
 		
-		<!-- Libraries -->
+		    <!-- Libraries -->
         <script src="js/libs/jquery-1.7.1.min.js"></script>
         <script src="js/libs/json2.js"></script>
         <script src="js/libs/underscore-min.js"></script>
         <script src="js/libs/backbone-min.js"></script>
-
-		<!-- Application -->
-        <script src="js/app/models/setModel.js"></script>
-        <script src="js/app/collections/gameCollection.js"></script>
-        <script src="js/app/views/gameView.js"></script>
-        <script src="js/app/views/setView.js"></script>
+		  
+        <!-- Application -->
         <script src="js/app/app.js"></script>
+        <!-- Models -->
+        <script src="js/app/models/setModel.js"></script>
+        <!-- Collections -->
+        <script src="js/app/collections/gameCollection.js"></script>
+        <!-- Views -->
+        <script src="js/app/views/setView.js"></script>
+        <script src="js/app/views/gameView.js"></script>
+        
+        
+        
     </body>
 </html>

@@ -1,7 +1,7 @@
 // # Define game collection #
-Game = Backbone.Collection.extend({
+App.Collections.Game = Backbone.Collection.extend({
     // Specifiy model for this collection
-  model: Set,
+  model: App.Models.Set,
   
   // Initialize collection *(backbone method)*
   initialize: function () {

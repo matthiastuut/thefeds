@@ -1,5 +1,5 @@
 // # Define set model #
-Set = Backbone.Model.extend({
+App.Models.Set = Backbone.Model.extend({
   // Set model defaults *(backbone method)*
   defaults: {
     "number" : 0,

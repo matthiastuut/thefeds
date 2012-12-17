@@ -1,5 +1,5 @@
 // # Define set view #
-SetView = Backbone.View.extend({
+App.Views.Set = Backbone.View.extend({
   // Define element (this.el)  
   tagName: "tr",
   

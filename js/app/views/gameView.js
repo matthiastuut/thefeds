@@ -1,5 +1,5 @@
 // # Define game view #
-GameView = Backbone.View.extend({
+App.Views.Game = Backbone.View.extend({
   // Define element (this.el)     
   el: $("#game"),
   
@@ -8,7 +8,7 @@ GameView = Backbone.View.extend({
     this.logMessage("Game view initialized");
         
     // Specify collection for this view
-    this.collection = new Game(gameData);
+    this.collection = new App.Collections.Game(App.Data.Game);
     
     // Render view
     this.render();
@@ -27,7 +27,7 @@ GameView = Backbone.View.extend({
   // Render tournament *(custom method)*
   renderSet: function (item) {
     // Create new instance of TournamentView
-    var setView = new SetView({
+    var setView = new App.Views.Set({
       model: item
     });
 
@@ -41,3 +41,6 @@ GameView = Backbone.View.extend({
   }
   
 });
+
+// Kickstart the application by creating an instance of GameView
+var sets = new App.Views.Game();

@@ -5,8 +5,8 @@ App.Models.Set = Backbone.Model.extend({
     "number" : 0,
     "team1" : "unknown",
     "team2" : "unknown",
-    "team1Score" : "unknown",
-    "team2Score" : "unknown",
+    "team1Score" : "?",
+    "team2Score" : "?",
   },
   
   // Initialize model *(backbone method)*

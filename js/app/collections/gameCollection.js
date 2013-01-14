@@ -2,6 +2,7 @@
 App.Collections.Game = Backbone.Collection.extend({
     // Specifiy model for this collection
   model: App.Models.Set,
+
   comparator: function (game) {
     return game.get('team1Score');
   },

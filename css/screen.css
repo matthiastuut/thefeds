@@ -4,6 +4,7 @@
 }
 body {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	color:#fff;
 	font-family:verdana;
 	background: url('../img/frisbee.jpeg') no-repeat fixed;
@@ -176,6 +177,18 @@ box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px r
 	padding-top:20px;
 	text-align: center;
 }
+=======
+	color:#000;
+
+	font-family: 'Russo One', sans-serif;
+
+
+
+	background: url('../images/wallpaper.jpg') no-repeat fixed;
+	padding-top:20px;
+	text-align: center;
+}
+>>>>>>> Commit Matthias
 
 section {
 	margin: 0 auto;
@@ -303,5 +316,9 @@ section ul li input[type="submit"]{
 
 #team1:hover, #team2:hover {
     color: #0000ff;
+<<<<<<< HEAD
+}
+>>>>>>> Commit Matthias
+=======
 }
 >>>>>>> Commit Matthias

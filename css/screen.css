@@ -3,141 +3,165 @@
 	padding:0;
 }
 body {
-	color:#000;
-
-	font-family: 'Russo One', sans-serif;
-
-
-
-	background: url('../images/wallpaper.jpg') no-repeat fixed;
+	color:#fff;
+	font-family:verdana;
+	background: url('../img/frisbee.jpeg') no-repeat fixed;
+	background-size:100%;
 	padding-top:20px;
-	text-align: center;
+	x-webkit-transform-style: preserve-3d;
+}
+#wrapper {
+	width:97%;
+}
+h1 {
+	font-family: Georgia;
+	font-size:1.2em;
+	margin-bottom:.5em;
+	margin-left:20px;
+}
+h2 {
+	font-weight:normal;
+	font-size:1em;
+}
+label{
+	font-size:.85em;
 }
 
-section {
-	margin: 0 auto;
-	text-align: left;
-	width: 700px;
+#game {
+	padding-left:20px;
 }
 
-section > h1 {
-	color: #fff;
-	font-family: 'Chango', cursive;
+form {
+	float:left;
+	margin-left:20px;
+	display:none;
 }
-
-section ul > li {
-	display: block;
-	border-spacing:0px 7px;
-	width: 760px;
+ul {
+	list-style:none;
 }
-
-section ul li {
-    border-color: #fff;
-    padding: 10px;
-    background-color: #DEDEDE;
-    opacity: 0.9;
-    clear: both;
-    height: 20px;
+nav.actions li {
+	display:inline;
+	margin-right:10px;
 }
-
-section > ul li span {
-	display: block;
+nav.actions li button {
+	padding:2px 5px;
+	line-height:1.5;
 	float: left;
-	margin-left: 14px;
 }
 
-section ul li input {
-	margin-left: 14px;
-}
+	#game table {
+		width:500px;
+		float:left;
+		border-collapse: collapse;
+		border-radius:20px;
+	}
+	#game table tr {
+		height: 50px;
+		background-color:rgba(0,0,0,.75);
+		border:1px solid #ccc;
+		padding:2%;
+		margin:20px 20px 20px 0;
+		box-shadow:0 0 6px rgba(0,0,0,0.5);
+		overflow:hidden;
+			position:relative;
+	}
+	#game table td {
+		padding: 5px;
+	}
+	#game table th:last-child {
+		width:120px;
+	}
+	form h1 {
+		text-align:left;
+		font-size:1.25em;
+		margin-left:0;
+	}
 
-section ul li > span:nth-of-type(1) {
-	width: 150px;
-}
-
-section ul li > span:nth-of-type(2) {
-	width: 200px;
-}
-
-
-section ul li > span:nth-of-type(3) {
-	width: 100px;
-}
-section ul li > span:nth-of-type(4) {
-	width: 200px;
-}
-
-section ul li > span:nth-of-type(5) {
-	width: 20px;
-}
-
-
-section ul li:first-of-type {
-    padding: 4px 10px 4px 10px;
-    opacity: 1;
-    background-color: #fff;
-}
-
-section ul li input[type="date"] {
-	width: 140px;
-}
-
-section ul li input[type="text"] {
-	width: 190px;
-}
-
-section ul li input[type="number"] {
-	width: 40px;
-}
-
-section ul li input#team2Score{
-	margin-left: 0px;
-}
-
-section ul li input#team2 {
-	margin-left: 5px;
-}
-
-section ul li input[type="submit"]{
-	text-align: center;
-	line-height: 20px;
-	text-decoration: none;
-	color: #fff;
-	height: 20px;
-	font-size: 12px;
-	width: 40px;
-	border-radius: 12px;
-	background-color: #00ff00;
-	border: 0px;
-	cursor: pointer;
-}
+/* button */
 
 .delete {
-	display: block;
-	text-align: center;
-	line-height: 22px;
+	display: none;
 	text-decoration: none;
 	color: #fff;
-	height: 20px;
-	font-size: 12px;
-	width: 20px;
-	border-radius: 12px;
-	background-color: #ff0000;
+	font-weight: bold;
+	background-color: #538fbe;
+		padding: 5px 20px;
+	border: 1px solid #2d6898;
+	background-image: linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(73,132,180) 0%, rgb(97,155,203) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(73,132,180)),
+		color-stop(1, rgb(97,155,203))
+	);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	-webkit-transform: rotateX(20deg);
+}
+tbody#gameData tr:hover .delete {
+	display:inline-block;
+}
+.delete:hover {
+	background-image: linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(79,142,191) 0%, rgb(102,166,214) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(79,142,191)),
+		color-stop(1, rgb(102,166,214))
+	);
 }
 
-#filter {
-	color: #fff;
-	margin-top: 10px;
-	margin-bottom: 10px;
+.delete:active {
+-webkit-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+-moz-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+	background-image: linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(88,154,204) 0%, rgb(90,150,199) 100%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(88,154,204)),
+		color-stop(1, rgb(90,150,199))
+	);
+    -webkit-transform: translate(0, 4px) rotateX(20deg);  
+    -moz-transform: translate(0, 4px);  
+    transform: translate(0, 4px);  
 }
 
-#filter select {
-	margin-left: 15px;
+#addSet {
+	background-color:rgba(0,0,0,.75);
+	border:1px solid #ccc;
+	padding:2%;
+	margin:20px 20px 20px 0;
+	border-radius:20px;
+	box-shadow:0 0 6px rgba(0,0,0,0.5);
+	margin-left:20px;
 }
 
-#team1, #team2 {
-    cursor: pointer;
-}
 
-#team1:hover, #team2:hover {
-    color: #0000ff;
-}
+>>>>>>> 83ae234b32d11b80a4504c6f892ca0e8eeb856cd

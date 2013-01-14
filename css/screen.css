@@ -3,6 +3,7 @@
 	padding:0;
 }
 body {
+<<<<<<< HEAD
 	color:#fff;
 	font-family:verdana;
 	background: url('../img/frisbee.jpeg') no-repeat fixed;
@@ -164,3 +165,143 @@ box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px r
 }
 
 
+=======
+	color:#000;
+
+	font-family: 'Russo One', sans-serif;
+
+
+
+	background: url('../images/wallpaper.jpg') no-repeat fixed;
+	padding-top:20px;
+	text-align: center;
+}
+
+section {
+	margin: 0 auto;
+	text-align: left;
+	width: 700px;
+}
+
+section > h1 {
+	color: #fff;
+	font-family: 'Chango', cursive;
+}
+
+section ul > li {
+	display: block;
+	border-spacing:0px 7px;
+	width: 760px;
+}
+
+section ul li {
+    border-color: #fff;
+    padding: 10px;
+    background-color: #DEDEDE;
+    opacity: 0.9;
+    clear: both;
+    height: 20px;
+}
+
+section > ul li span {
+	display: block;
+	float: left;
+	margin-left: 14px;
+}
+
+section ul li input {
+	margin-left: 14px;
+}
+
+section ul li > span:nth-of-type(1) {
+	width: 150px;
+}
+
+section ul li > span:nth-of-type(2) {
+	width: 200px;
+}
+
+
+section ul li > span:nth-of-type(3) {
+	width: 100px;
+}
+section ul li > span:nth-of-type(4) {
+	width: 200px;
+}
+
+section ul li > span:nth-of-type(5) {
+	width: 20px;
+}
+
+
+section ul li:first-of-type {
+    padding: 4px 10px 4px 10px;
+    opacity: 1;
+    background-color: #fff;
+}
+
+section ul li input[type="date"] {
+	width: 140px;
+}
+
+section ul li input[type="text"] {
+	width: 190px;
+}
+
+section ul li input[type="number"] {
+	width: 40px;
+}
+
+section ul li input#team2Score{
+	margin-left: 0px;
+}
+
+section ul li input#team2 {
+	margin-left: 5px;
+}
+
+section ul li input[type="submit"]{
+	text-align: center;
+	line-height: 20px;
+	text-decoration: none;
+	color: #fff;
+	height: 20px;
+	font-size: 12px;
+	width: 40px;
+	border-radius: 12px;
+	background-color: #00ff00;
+	border: 0px;
+	cursor: pointer;
+}
+
+.delete {
+	display: block;
+	text-align: center;
+	line-height: 22px;
+	text-decoration: none;
+	color: #fff;
+	height: 20px;
+	font-size: 12px;
+	width: 20px;
+	border-radius: 12px;
+	background-color: #ff0000;
+}
+
+#filter {
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#filter select {
+	margin-left: 15px;
+}
+
+#team1, #team2 {
+    cursor: pointer;
+}
+
+#team1:hover, #team2:hover {
+    color: #0000ff;
+}
+>>>>>>> Commit Matthias

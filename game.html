@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Frisbee score app</title>
+        <link rel="stylesheet" href="css/screen.css" />
+
+    </head>
+    <body>
+    <h1 id="game_results">Game results</h1>
+        <article id="game">
+          <nav class="actions">
+            <ul>
+              <li id="filter"><label>Show:</label></li>
+              <li><button id="showForm">Add new set</button></li>
+            </ul>
+          </nav>
+          <table>
+            <thead>
+              <tr>
+                <th>Set</th>
+                <th>Team 1</th>
+                <th>Result</th>
+                <th>Team 2</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="gameData">
+            </tbody>
+          </table>
+
+          <form id="addSet" action="#">
+          <h1>Add set</h1>
+            <label for="team1">Team 1:</label>
+            <input id="team1" placeholder="Team 1 name" type="text" />
+            <label for="team1Score">Score:</label>
+            <input id="team1Score"  placeholder="Team 1 score" type="text" />
+            <br />
+            <label for="team2">Team 2:</label>
+            <input id="team2" placeholder="Team 2 name" type="text" />
+            <label for="team2Score">Score:</label>
+            <input id="team2Score"  placeholder="Team 2 score" type="text" />
+            <div class="clearfix"><input type="submit" id="add" value="Add" /></div>
+        </form>
+        </article>
+        
+    
+        <script id="setTemplate" type="text/template">
+            <td><%= number %></td>
+            <td><%= team1 %></td>
+            <td><%= team1Score %> - <%= team2Score %></td>
+            <td><%= team2 %></td>
+            <td><a href="#" class="delete">Delete</a></td>
+        </script>
+    
+        <!-- Libraries -->
+        <script src="js/libs/jquery-1.7.1.min.js"></script>
+        <script src="js/libs/json2.js"></script>
+        <script src="js/libs/underscore-min.js"></script>
+        <script src="js/libs/backbone-min.js"></script>
+      
+        <!-- Application -->
+        <script src="js/app/app.js"></script>
+        <!-- Models -->
+        <script src="js/app/models/setModel.js"></script>
+        <!-- Collections -->
+        <script src="js/app/collections/gameCollection.js"></script>
+        <!-- Views -->
+        <script src="js/app/views/setView.js"></script>
+        <script src="js/app/views/gameView.js"></script>
+        
+        
+        
+    </body>
+</html>

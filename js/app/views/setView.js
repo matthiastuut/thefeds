@@ -6,13 +6,30 @@ App.Views.Set = Backbone.View.extend({
   // Set reference to template
   template: $("#setTemplate").html(),
   
-  // Initialize view *(backbone method)*
-  initialize: function () {
-    this.logMessage("Set view initialized");
+  // Attach event handler to view elements
+  events: {
+      "click a.delete": "deleteSet"
   },
-  
+
+  // Delete tournament model
+  deleteSet: function (e) {
+    e.preventDefault();
+    
+    var removedType = this.model.get("team1Score").toLowerCase();
+    
+    if (_.indexOf(sets.getTypes(), removedType) !== -1) {
+          
+          sets.$el.find("#filter select").children("[value='" + removedType + "']").remove();
+      }
+
+    this.model.destroy();
+    this.remove();
+      
+    
+  },
+
   // Render view *(backbone method)*
-    render: function () {
+  render: function () {
     // Store template in variable
     var tmpl = _.template(this.template);
     
@@ -20,10 +37,5 @@ App.Views.Set = Backbone.View.extend({
     $(this.el).html(tmpl(this.model.toJSON()));
 
     return this;
-    },
-
-  // Log message *(custom method)*
-  logMessage: function (message) {
-    console.log(message);
   }
 });

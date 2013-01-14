@@ -11,7 +11,7 @@ App.Collections.Game = Backbone.Collection.extend({
 
   // Sort on team1Score
   comparator: function(game){
-    return game.get("team1Score");
+    return game.get("team1");
   },
 >>>>>>> comparator game
   // Initialize collection *(backbone method)*

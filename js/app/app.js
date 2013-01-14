@@ -1,13 +1,12 @@
 ﻿//Tournaments Web App *(Backbone example application)*
 /**
  *	Tournaments Web App (Backbone example application)
- *	
- *
  */
 var App = {
   Models: {},
   Collections: {},
   Views: {},
+  Router: {},
   Data: {}
 }
 // # Game data #

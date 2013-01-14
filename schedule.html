@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Schedule</title>
+
+        <!-- styling -->
+        <link rel="stylesheet" href="css/screen.css" />
+
+        <!-- fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Chango' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+		<section id="schedule">
+			<h1>Pool</h1>
+			<div id="filter"><label>Search by time of play:</label></div>
+			
+            <!-- List with schedule -->
+			<ul id="table">
+            </ul>
+
+            <!-- Possibility to add -->
+            <ul>
+                <li class="top">
+                    <form id="addGameSchedule" action="#" class="form-4">
+                    <input id="date" placeholder="Day, 00:00am" type="date" />
+                    <input id="team1" placeholder="Name home team" type="text" />
+                    <input id="team1Score" placeholder="0" type="number" /> - <input id="team2Score" type="number" />
+                    <input id="team2" placeholder="Name out team" type="text" />
+                    <input type="submit" id="add" value="Add" />
+                    </form>
+                </li>
+            </ul>
+		</section>
+
+        <!-- Template for schedule list-->	
+        <script id="scheduleTemplate" type="text/template">
+                <span><%= date %></span>
+                <span><%= team1 %></span>
+                <span><%= team1Score %> - <%= team2Score %></span>
+                <span><%= team2 %></span>
+                <span><a href="#" class="delete">X</a></span>
+        </script>
+		
+		<!-- Libraries -->
+        <script src="js/libs/jquery-1.7.1.min.js"></script>
+        <script src="js/libs/jquery-ui-1.8.19.custom.min.js"></script>
+        <script src="js/libs/json2.js"></script>
+        <script src="js/libs/underscore-min.js"></script>
+        <script src="js/libs/backbone-min.js"></script>
+
+         <!-- Application -->
+        <script src="js/app/app.schedule.js"></script>
+          <!-- Models -->
+        <script src="js/app/models/gameScheduleModel.js"></script>
+          <!-- Collections -->
+        <script src="js/app/collections/scheduleCollection.js"></script>
+        <!-- Views -->
+        <script src="js/app/views/gameScheduleView.js"></script>
+        <script src="js/app/views/scheduleView.js"></script>
+    </body>
+</html>

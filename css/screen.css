@@ -3,43 +3,141 @@
 	padding:0;
 }
 body {
-	color:#fff;
-	font-family:verdana;
-	background: url('../img/frisbee.jpeg') no-repeat fixed;
+	color:#000;
+
+	font-family: 'Russo One', sans-serif;
+
+
+
+	background: url('../images/wallpaper.jpg') no-repeat fixed;
 	padding-top:20px;
+	text-align: center;
 }
-#wrapper {
-	width:500px;
+
+section {
+	margin: 0 auto;
+	text-align: left;
+	width: 700px;
 }
-h1 {
-	font-family: 'Shadows Into Light Two', cursive;
-	margin-bottom:.5em;
-	margin-left:20px;
+
+section > h1 {
+	color: #fff;
+	font-family: 'Chango', cursive;
 }
-h2 {
-	font-weight:normal;
-	font-size:1em;
+
+section ul > li {
+	display: block;
+	border-spacing:0px 7px;
+	width: 760px;
 }
-#league {
-	list-style:none;
+
+section ul li {
+    border-color: #fff;
+    padding: 10px;
+    background-color: #DEDEDE;
+    opacity: 0.9;
+    clear: both;
+    height: 20px;
 }
-	#league li {
-		width:80%;
-		background-color:rgba(0,0,0,.75);
-		border:1px solid #ccc;
-		padding:2%;
-		margin:20px;
-		border-radius:20px;
-		box-shadow:0 0 6px rgba(0,0,0,0.5);
-	}
-	#league h1 {
-		text-align:left;
-		font-size:1.75em;
-		margin-left:0;
-	}
-	#league h2 {
-		color:#666;
-	}
-	#league strong {
-		color:#fff;
-	}
+
+section > ul li span {
+	display: block;
+	float: left;
+	margin-left: 14px;
+}
+
+section ul li input {
+	margin-left: 14px;
+}
+
+section ul li > span:nth-of-type(1) {
+	width: 150px;
+}
+
+section ul li > span:nth-of-type(2) {
+	width: 200px;
+}
+
+
+section ul li > span:nth-of-type(3) {
+	width: 100px;
+}
+section ul li > span:nth-of-type(4) {
+	width: 200px;
+}
+
+section ul li > span:nth-of-type(5) {
+	width: 20px;
+}
+
+
+section ul li:first-of-type {
+    padding: 4px 10px 4px 10px;
+    opacity: 1;
+    background-color: #fff;
+}
+
+section ul li input[type="date"] {
+	width: 140px;
+}
+
+section ul li input[type="text"] {
+	width: 190px;
+}
+
+section ul li input[type="number"] {
+	width: 40px;
+}
+
+section ul li input#team2Score{
+	margin-left: 0px;
+}
+
+section ul li input#team2 {
+	margin-left: 5px;
+}
+
+section ul li input[type="submit"]{
+	text-align: center;
+	line-height: 20px;
+	text-decoration: none;
+	color: #fff;
+	height: 20px;
+	font-size: 12px;
+	width: 40px;
+	border-radius: 12px;
+	background-color: #00ff00;
+	border: 0px;
+	cursor: pointer;
+}
+
+.delete {
+	display: block;
+	text-align: center;
+	line-height: 22px;
+	text-decoration: none;
+	color: #fff;
+	height: 20px;
+	font-size: 12px;
+	width: 20px;
+	border-radius: 12px;
+	background-color: #ff0000;
+}
+
+#filter {
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#filter select {
+	margin-left: 15px;
+}
+
+#team1, #team2 {
+    cursor: pointer;
+}
+
+#team1:hover, #team2:hover {
+    color: #0000ff;
+}

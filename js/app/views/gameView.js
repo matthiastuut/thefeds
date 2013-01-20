@@ -1,5 +1,5 @@
 // # Define game view #
-App.Views.Game = Backbone.View.extend({
+Views.Game = Backbone.View.extend({
   // Define element (this.el)     
   el: $("#game"),
   
@@ -7,7 +7,7 @@ App.Views.Game = Backbone.View.extend({
   initialize: function () {
     this.table = this.$el.find("#gameData");
     // Specify collection for this view
-    this.collection = new App.Collections.Game(App.Data.Game);
+    this.collection = new Collections.Game(Data.Game);
     
     this.render();
     
@@ -38,8 +38,8 @@ App.Views.Game = Backbone.View.extend({
   
   // Render Set *(custom method)*
   renderGame: function (item) {
-    // Create new instance of App.Views.Set
-    var setView = new App.Views.Set({
+    // Create new instance of Views.Set
+    var setView = new Views.Set({
       model: item
     });
 
@@ -59,7 +59,7 @@ App.Views.Game = Backbone.View.extend({
 
     // Find highest number and set new number for new model
     var currentHighest = 0;
-    _.each(App.Data.Game, function (item) {
+    _.each(Data.Game, function (item) {
       if(item.number > currentHighest){
         currentHighest = item.number;
       }
@@ -68,24 +68,24 @@ App.Views.Game = Backbone.View.extend({
     newModel.number = parseInt(currentHighest)+1;
 
     // Push new data tot Data.Game
-    App.Data.Game.push(newModel);
+    Data.Game.push(newModel);
 
     if (_.indexOf(this.getTypes(), newModel.team1Score) === -1) {
-           this.collection.add(new App.Models.Set(newModel));
+           this.collection.add(new Models.Set(newModel));
           this.$el.find("#filter").find("select").remove().end().append(this.createSelect());
       } else {
-          this.collection.add(new App.Models.Set(newModel));
+          this.collection.add(new Models.Set(newModel));
       }
       
-      this.collection.reset(App.Data.Game);
+      this.collection.reset(Data.Game);
   },
 
   // Remove Set model
   removeSet: function (removedModel) {
     var removed = removedModel.attributes;
-    _.each(App.Data.Game, function (item) {
+    _.each(Data.Game, function (item) {
       if (_.isEqual(item, removed)) {
-        App.Data.Game.splice(_.indexOf(App.Data.Game, item), 1);
+        Data.Game.splice(_.indexOf(Data.Game, item), 1);
       }
     });
   },
@@ -119,9 +119,9 @@ App.Views.Game = Backbone.View.extend({
   
   filterByType: function () {
       if (this.filterType === "all") {
-          this.collection.reset(App.Data.Game);
+          this.collection.reset(Data.Game);
       } else {
-        this.collection.reset(App.Data.Game, { silent: true });
+        this.collection.reset(Data.Game, { silent: true });
         var filterType = this.filterType,
             filtered = _.filter(this.collection.models, function (item) {
             return item.get("team1Score").toLowerCase() === filterType;
@@ -144,4 +144,4 @@ App.Views.Game = Backbone.View.extend({
 });
 
 // Kickstart the application by creating an instance of GameView
-var sets = new App.Views.Game();
+var sets = new Views.Game();

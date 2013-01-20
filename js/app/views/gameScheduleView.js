@@ -1,7 +1,8 @@
-// define individual tournament view
-FD.GameScheduleScheduleView = Backbone.View.extend({
+define([
+], function(){
+GameScheduleScheduleView = Backbone.View.extend({
     tagName: "li",
-    template: $("#scheduleTemplate").html(),
+    // template: $("#scheduleTemplate").html(),
 	
 	// Attach event handler to view elements
 	events: {
@@ -23,15 +24,17 @@ FD.GameScheduleScheduleView = Backbone.View.extend({
 		
 		
 	    // if type don't exist delete from filter;
-		if (_.indexOf(FD.schedule.getTypes(), removedDate) === -1) {
-	        FD.schedule.$el.find("#filter select").children("[value='" + removedDate + "']").remove();
+		if (_.indexOf(schedule.getTypes(), removedDate) === -1) {
+	        schedule.$el.find("#filter select").children("[value='" + removedDate + "']").remove();
 	    }
 	},
 	
 	// Render view
     render: function () {
-        var tmpl = _.template(this.template);;
+         var tmpl = _.template($("#scheduleTemplate").html());
         this.$el.html(tmpl(this.model.toJSON()));
         return this;
     }
+});
+  return GameScheduleScheduleView;
 });

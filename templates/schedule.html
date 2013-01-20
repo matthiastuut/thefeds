@@ -1,0 +1,30 @@
+﻿<section id="schedule">
+	<h1>Pool</h1>
+	<div id="filter"><label>Search by time of play:</label></div>
+	
+    <!-- List with schedule -->
+	<ul id="table">
+    </ul>
+
+    <!-- Possibility to add -->
+    <ul>
+        <li class="top">
+            <form id="addGameSchedule" action="#" class="form-4">
+            <input id="date" placeholder="Day, 00:00am" type="date" />
+            <input id="team1" placeholder="Name home team" type="text" />
+            <input id="team1Score" placeholder="0" type="number" /> - <input id="team2Score" type="number" />
+            <input id="team2" placeholder="Name out team" type="text" />
+            <input type="submit" id="add" value="Add" />
+            </form>
+        </li>
+    </ul>
+</section>
+
+<!-- Template for schedule list-->	
+<script id="scheduleTemplate" type="text/template">
+        <span><%= date %></span>
+        <span><%= team1 %></span>
+        <span><%= team1Score %> - <%= team2Score %></span>
+        <span><%= team2 %></span>
+        <span><a href="#" class="delete">X</a></span>
+</script>

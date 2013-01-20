@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Schedule</title>
+
+        <!-- styling -->
+        <link rel="stylesheet" href="css/screen.css" />
+
+        <!-- fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Chango' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+    </head>
+    <nav>
+        <ul class="nav">
+			<li><a href="#/home">Dashboard</a></li>
+			<li><a href="#/tournament">Tournament</a></li>
+			<li><a href="#/schedule">Schedule</a></li>
+			<li><a href="#/ranking">Ranking</a></li>
+			<li><a href="#/game">Game</a></li>	
+        </ul>
+   	</nav>
+
+   	<div class="content">
+   	</div>
+
+   	<script src="js/libs/jquery-1.7.1.min.js"></script>
+	<script src="js/libs/underscore-min.js"></script>
+	<script src="js/libs/backbone-min.js"></script>
+
+
+	<!-- Kickstart application -->
+	<script>
+	scheduleData = [
+        { date: "Monday, 09:00am", team1: "Chasing", team1Score: "3", team2: "Amsterdam Money Gang", team2Score: "1"},
+        { date: "Monday, 09:00am", team1: "Boomsquad", team1Score: "3", team2: "Beast Amsterdam", team2Score: "0"},
+        { date: "Monday, 10:00am", team1: "Beast Amsterdam", team1Score: "3", team2: "Amsterdam Money Gang", team2Score: "0"},
+        { date: "Monday, 10:00am", team1: "Chasing", team1Score: "3", team2: "Burning Snow", team2Score: "0"},
+        { date: "Monday, 11:00am", team1: "Boomsquad", team1Score: "3", team2: "Amsterdam Money Gang", team2Score: "0"},    
+        { date: "Monday, 11:00am", team1: "Burning Snow", team1Score: "3", team2: "Beast Amsterdam", team2Score: "0"},
+        { date: "Monday, 12:00pm", team1: "Chasing", team1Score: "3", team2: "Beast Amsterdam", team2Score: "0"},
+        { date: "Monday, 12:00pm", team1: "Boomsquad", team1Score: "3", team2: "Burning Snow", team2Score: "0"},
+        { date: "Monday, 01:00pm", team1: "Chasing", team1Score: "3", team2: "Boomsquad", team2Score: "0"},
+        { date: "Monday, 01:00pm", team1: "Burning Snow", team1Score: "3", team2: "Amsterdam Money Gang", team2Score: "0"}
+    ];
+    </script>
+	<script data-main="js/main" src="js/libs/require.js"></script>

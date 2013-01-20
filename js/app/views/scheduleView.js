@@ -1,16 +1,31 @@
 // define tournaments view
-FD.ScheduleView = Backbone.View.extend({
-    el: $("#schedule"),
+(function () {
+	"use strict";
+	define([
+  		'app/collections/scheduleCollection',
+		'text!templates/schedule.html',
+  		'app/views/GameScheduleView',
+	], function (Schedule, ScheduleTemplate,GameScheduleScheduleView) {
+		var ScheduleView = Backbone.View.extend({
+	el: $(".content"),
+
+	
+			
 	
     initialize: function () {
+    	// console.log(Schedule);
 		this.list = this.$el.find("#table");
-        this.collection = new FD.Schedule(FD.scheduleData);
+		// console.log(scheduleData);
+        this.collection = new Schedule(scheduleData);
+        // this.collection = new Schedule(scheduleData);
+
 
 		this.render();	
 		
 		// Fill filter
-		this.$el.find("#filter").append(this.createSelect());
 		
+        this.$el.find("#filter").append(this.createSelect());
+
 		// Attach custom event handler
 		this.on("change:filterType", this.filterByType, this);
 		
@@ -18,9 +33,6 @@ FD.ScheduleView = Backbone.View.extend({
         this.collection.on("reset", this.render, this);
 		this.collection.on("add", this.renderSchedule, this);
 		this.collection.on("remove", this.removeGameSchedule, this);
-
-
-			
     },
 
 	// Attach event handlers to view elements
@@ -33,24 +45,28 @@ FD.ScheduleView = Backbone.View.extend({
 	
 	// Render the view
     render: function () {
+    	console.log("test1");
+		this.$el.html(ScheduleTemplate);
     	this.$el.find("ul#table").html('<li><span>Date</span><span id="team1">Home v</span><span>Result</span><span id="team2">Out v</span></li>');
 		_.each(this.collection.models, function (item) {
         	this.renderSchedule(item);
         }, this);
+        this.$el.find("#filter").append(this.createSelect());
+
 
     },
 
     renderSchedule: function (item) {
-        var gameView = new FD.GameScheduleScheduleView({
+        var gameView = new GameScheduleScheduleView({
             model: item
         });
 
-        this.list.append(gameView.render().el);
+        this.$el.find("#table").append(gameView.render().el);
     },
 	
 	// Add tournament model
 	addGameSchedule: function (e) {
-	    this.collection.reset(FD.scheduleData);
+	    this.collection.reset(scheduleData);
 	    e.preventDefault();
 	    var newModel = {};
 	    $("#addGameSchedule").children("input").each(function (i, el) {
@@ -58,15 +74,15 @@ FD.ScheduleView = Backbone.View.extend({
 	            newModel[el.id] = $(el).val();
 	      }
 	    });
-	    FD.scheduleData.push(newModel);
+	    scheduleData.push(newModel);
 	    
 
 	    if (_.indexOf(this.getTypes(), newModel.date) === -1) {
-	         this.collection.add(new FD.GameSchedule(newModel));
+	         this.collection.add(new GameSchedule(newModel));
 	         this.$el.find("#filter select").remove().end();
 	         this.$el.find("#filter").append(this.createSelect());
 	    } else {
-	        this.collection.add(new FD.GameSchedule(newModel));
+	        this.collection.add(new GameSchedule(newModel));
 	    }
 	    
 	},
@@ -74,9 +90,9 @@ FD.ScheduleView = Backbone.View.extend({
 	// Remove tournament model
 	removeGameSchedule: function (removedModel) {
 	    var removed = removedModel.attributes;
-	    _.each(FD.scheduleData, function (item) {
+	    _.each(scheduleData, function (item) {
 	        if (_.isEqual(item, removed)) {
-	            FD.scheduleData.splice(_.indexOf(FD.scheduleData, item), 1);
+	            scheduleData.splice(_.indexOf(scheduleData, item), 1);
 	        }
 	    });
 	},
@@ -100,7 +116,7 @@ FD.ScheduleView = Backbone.View.extend({
 	            text: item.toLowerCase()
 	        }).appendTo(select);
 	    });
-	    return select;
+		return select;
 	},
 
 	// Create schedulingFormat select box
@@ -124,9 +140,9 @@ FD.ScheduleView = Backbone.View.extend({
 	// Filter the collection
 	filterByType: function () {
 	    if (this.filterType === "all") {
-	        this.collection.reset(FD.scheduleData);
+	        this.collection.reset(scheduleData);
 	    } else {
-	       this.collection.reset(FD.scheduleData, { silent: true });
+	       this.collection.reset(scheduleData, { silent: true });
 	        var filterType = this.filterType,
 	            filtered = _.filter(this.collection.models, function (item) {
 	            return item.get("date").toLowerCase() === filterType;
@@ -140,8 +156,12 @@ FD.ScheduleView = Backbone.View.extend({
 		e.preventDefault();
 	    this.$el.find("#addGameSchedule").slideToggle();
 	}
-});
+
+	});
+		return new ScheduleView();
+	});
+}());
 
 
 //create instance of master view
-FD.schedule = new FD.ScheduleView();
+// schedule = new ScheduleView();

@@ -1,5 +1,8 @@
 // # Define set model #
-App.Models.Set = Backbone.Model.extend({
+define([
+  'app/config'
+], function(config){
+  var SetModel = Backbone.Model.extend({
   // Set model defaults *(backbone method)*
   defaults: {
     "number" : 0,
@@ -18,4 +21,6 @@ App.Models.Set = Backbone.Model.extend({
   logMessage: function (message) {
     console.log(message);
   }
+});
+  return SetModel;
 });

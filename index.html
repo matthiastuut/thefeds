@@ -12,16 +12,18 @@
 		<link rel="stylesheet" href="css/bootstrap-responsive.css">
 		<link rel="stylesheet" href="css/style.css" />
     </head>
+   	<select name="team">
+   		<!-- teams -->
+   		<option value="" selected="selected">(Selecteer een team)</option>
+   	</select>
+
     <nav>
         <ul class="nav">
-			<li><a href="#/home">Dashboard</a></li>
-			<li><a href="#/tournament">Tournament</a></li>
-			<li><a href="#/schedule">Schedule</a></li>
-			<li><a href="#/ranking">Ranking</a></li>
 			<li><a href="#/game">Game</a></li>	
+			<li><a href="#/schedule">Schedule</a></li>
         </ul>
    	</nav>
-
+   	</div>
    	<div class="content">
    	</div>
 
@@ -43,6 +45,14 @@
         { date: "Monday, 12:00pm", team1: "Boomsquad", team1Score: "3", team2: "Burning Snow", team2Score: "0"},
         { date: "Monday, 01:00pm", team1: "Chasing", team1Score: "3", team2: "Boomsquad", team2Score: "0"},
         { date: "Monday, 01:00pm", team1: "Burning Snow", team1Score: "3", team2: "Amsterdam Money Gang", team2Score: "0"}
+    ];
+
+    GameData = [
+      { number: "1", team1: "Boomsquad", team1Score: "4", team2: "Burning Snow", team2Score: "1"},
+      { number: "2", team1: "Boomsquad", team1Score: "3", team2: "Burning Snow", team2Score: "4"},
+      { number: "3", team1: "Boomsquad", team1Score: "0", team2: "Burning Snow", team2Score: "4"},
+      { number: "4", team1: "Boomsquad", team1Score: "2", team2: "Burning Snow", team2Score: "4"},
+      { number: "5", team1: "Boomsquad", team1Score: "4", team2: "Burning Snow", team2Score: "3"}
     ];
     </script>
 	<script data-main="js/main" src="js/libs/require.js"></script>

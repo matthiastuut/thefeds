@@ -3,7 +3,7 @@
 (function () {
 	"use strict";
 	define([
-		'text!templates/home.html'
+		'text!templates/game.html'
 	], function (HomeTemplate) {
 		// console.log(this);
 		var HomeView = Backbone.View.extend({

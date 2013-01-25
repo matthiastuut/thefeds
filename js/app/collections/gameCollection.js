@@ -1,26 +1,19 @@
 // # Define game collection #
-App.Collections.Game = Backbone.Collection.extend({
+define([
+  'js/app/models/setModel.js'
+], function(SetModel){
+  var Game = Backbone.Collection.extend({
     // Specifiy model for this collection
-  model: App.Models.Set,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> Add
+  model: SetModel, 
   comparator: function (game) {
     return game.get('team1Score');
   },
 
-<<<<<<< HEAD
-=======
 
   // Sort on team1Score
-  comparator: function(game){
-    return game.get("team1");
-  },
->>>>>>> comparator game
-=======
->>>>>>> Add
+  // comparator: function(game){
+  //   return game.get("team1");
+  // },
   // Initialize collection *(backbone method)*
   initialize: function () {
     this.logMessage("Game collection initialized");
@@ -30,5 +23,8 @@ App.Collections.Game = Backbone.Collection.extend({
   logMessage: function (message) {
     console.log(message);
   }
+
+ });
+  return Game;
 
 });

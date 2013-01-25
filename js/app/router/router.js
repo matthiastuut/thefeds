@@ -4,14 +4,14 @@
 	"use strict";
 	define([
 		'../config',
-		'../views/homeView',
 		// 'views/tournament/tournament',
+		'../views/gameView',
 		'../views/scheduleView',
 		// 'views/tournament/ranking',
-		// 'views/tournament/game'
+		 // '../views/gameView'
 		
 	//], function (config, homeView, tournamentView, scheduleView, rankingView, gameView) {
-		], function (config, homeView, scheduleView) {
+		], function (config, gameView, scheduleView) {
 		var AppRouter = Backbone.Router.extend({
 			tournamentView:"",
 			
@@ -21,7 +21,7 @@
 				//'tournament':   'showTournament',
 				//'ranking'	: 	'showRanking',
 				'/schedule'	:   'showSchedule',
-				//'game'		:   'showGame',
+				'/game'		:   'showGame',
 
 				// Default
 				'*path': 'defaultAction'
@@ -33,7 +33,7 @@
 
 			showSchedule: function (actions) {
 				scheduleView.render();
-				console.log("rendering schedule");
+				console.log("rendering schedule"+ scheduleView);
 			},
 
 			showRanking: function (actions) {
@@ -45,8 +45,8 @@
 			},
 
 			defaultAction: function (actions) {
-				homeView.render();
-				console.log("rendering home");
+				gameView.render();
+				console.log("rendering home"+ gameView);
 			}
 		});
 

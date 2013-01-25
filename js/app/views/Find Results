@@ -1,0 +1,21 @@
+Searching 12 files for "setView"
+
+/Users/Matthias/dev/fd2/thefeds/js/app/views/gameView.js:
+    5        'app/collections/gameCollection',
+    6      'text!templates/game.html',
+    7:       'app/views/setView',
+    8    ], function (Collections.Game, GameTemplate, Views.set) {
+    9      var Views.Game = Backbone.View.extend({
+   ..
+   48    renderGame: function (item) {
+   49      // Create new instance of Views.Set
+   50:     var setView = new Views.Set({
+   51        model: item
+   52      });
+   53  
+   54      // Append the rendered HTML to the views element
+   55:     this.table.append(setView.render().el);
+   56    },
+   57  
+
+3 matches in 1 file

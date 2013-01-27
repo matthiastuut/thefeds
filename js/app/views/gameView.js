@@ -14,10 +14,22 @@
   initialize: function () {
     this.table = this.$el.find("#gameData");
     // Specify collection for this view
-    this.collection = new Game(GameData);
-    console.log(GameData);
-    
-    this.render();
+    this.collection = new App.Collections.Game();
+    // when you fetch:
+    // Backbone fetch => Collection parse => success callback
+    this.collection.fetch({
+      success: function(data) {
+          //console.log(self.collection.toJSON());
+          _.each(self.collection.models, function(model){
+              // set a resource uri on the model
+              //console.log("model data: ", model.toJSON());
+              //console.log("model: ", model);
+              model.url = model.get('resource_uri');
+              //console.log(model.url);
+          });
+          self.render();
+        }
+    });
     
     this.$el.find("#filter").append(this.createSelect());
     

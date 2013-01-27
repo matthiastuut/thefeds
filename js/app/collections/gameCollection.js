@@ -1,12 +1,13 @@
 // # Define game collection #
 define([
-  'js/app/models/setModel.js'
+  'js/app/models/setModel.js',
+  'app/config'
 ], function(SetModel){
-  App.Collections.Game = Backbone.Collection.extend({
+  GameCollection = Backbone.Collection.extend({
     // Specifiy model for this collection
   // Specifiy model for this collection
-  model: App.Models.Set,
-  url: App.Data.Game.api_url,
+  model: SetModel,
+   url: GameData,
   parse: function(data) {
       // what do we get from the API?    
       // we could log data, right? Let's!
@@ -30,6 +31,6 @@ define([
   }
 
  });
-  return Game;
+  return GameCollection;
 
 });

@@ -14,7 +14,7 @@
   initialize: function () {
     this.table = this.$el.find("#gameData");
     // Specify collection for this view
-    this.collection = new App.Collections.Game();
+    this.collection = new GameCollection();
     // when you fetch:
     // Backbone fetch => Collection parse => success callback
     this.collection.fetch({

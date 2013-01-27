@@ -12,4 +12,5 @@ define([], function() {
     tournamentID : 18519
                    
   }
+  console.log('config defined');
 });

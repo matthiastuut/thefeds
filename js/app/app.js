@@ -13,12 +13,14 @@
     };
 
     // Define config settings
-    App.Data.Game = {
+    var gameConfig = {
       tournamentID: 18590,
       access_token: '109f8a19ae',
       api_url: 'https://api.leaguevine.com/v1/games/',
       season_id: '20126'
     }
+
+    console.log(gameConfig);
 
     App.Data.Tournament = {
       tournamentID: 18590,
@@ -36,7 +38,7 @@
       }
 
       return {
-        initialize: initialize
+        initialize: initialize,
       };
       
     console.log(scheduleData)

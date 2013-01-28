@@ -23,10 +23,6 @@
 				'*path': 'defaultAction'
 			},
 
-			showTournament: function (actions) {
-				tournamentView.render();
-			},
-
 			showSchedule: function (actions) {
 				scheduleView.render();
 				console.log("rendering schedule"+ scheduleView);

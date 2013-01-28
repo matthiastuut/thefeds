@@ -23,6 +23,7 @@
 			renderTeam: function(team){
 			
 				this.render();
+				
 			},
 			
 			changeTeam: function(){

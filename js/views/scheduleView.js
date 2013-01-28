@@ -20,7 +20,7 @@
         // this.collection = new Schedule(scheduleData);
 
 
-		this.render();	
+		// this.render();	
 		
 		// Fill filter
 		

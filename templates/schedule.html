@@ -15,8 +15,10 @@
 	<div id="filter"><label>Search by time of play:</label></div>
 	
     <!-- List with schedule -->
-	<ul id="table">
+	<ul id="table" class="list">
     </ul>
+
+
 
     <!-- Possibility to add -->
     <ul>
@@ -34,9 +36,14 @@
 
 <!-- Template for schedule list-->	
 <script id="scheduleTemplate" type="text/template">
-        <span><%= date %></span>
-        <span><%= team_1.name %></span>
-        <span><%= team_1_score %> - <%= team_2_score %></span>
-        <span><%= team_2.name %></span>
-        <span><a href="#" class="delete">X</a></span>
+        <a href="#">
+            <span class="date"><%= date %></span>
+            <span class="team home"><%= team_1.name %></span> 
+            <span class="score">
+                <span><%= team_1_score %></span>
+                <span><%= team_2_score %></span>
+            </span>
+            <span class="team away"><%= team_2.name %></span>
+        </a>
+        
 </script>

@@ -3,10 +3,10 @@
 	"use strict";
 	define([
 		'app/collections/rankingCollection',
-		'text!templates/home.html',
+		'text!templates/ranking.html',
 	], function (collection, template) {
 		// console.log(this);
-		var HomeView = Backbone.View.extend({
+		var rankingView = Backbone.View.extend({
 			
 			el: $(".content"),
 			initialize: function(){
@@ -37,6 +37,6 @@
 				this.$el.html(template);
 			}
 		});
-		return new HomeView();
+		return new rankingView();
 	});
 }());

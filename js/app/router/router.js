@@ -9,10 +9,10 @@
 		'../views/scheduleView',
 		// 'views/tournament/ranking',
 		 // '../views/gameView'
-		 '../views/homeView'
+		 '../views/rankingView'
 		
 	//], function (config, homeView, tournamentView, scheduleView, rankingView, gameView) {
-		], function (config, gameView, scheduleView, homeView) {
+		], function (config, gameView, scheduleView, rankingView) {
 		var AppRouter = Backbone.Router.extend({
 			tournamentView:"",
 			
@@ -46,7 +46,7 @@
 			},
 
 			defaultAction: function (actions) {
-				homeView.render();
+				rankingView.render();
 			}
 		});
 

@@ -8,7 +8,7 @@ define([
 
     // Initialize model *(backbone method)*
     initialize: function () {
-      this.fetch();
+       // this.fetch();
     },
     
     defaults: {

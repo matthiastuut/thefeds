@@ -40,7 +40,6 @@
   	          model.url = model.get('resource_uri');
   	          // console.log(model.url);
   	      });
-  	      self.render();
   	    }
   	});
   	

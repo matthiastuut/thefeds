@@ -8,9 +8,6 @@
 	], function (Schedule, ScheduleTemplate,GameScheduleScheduleView) {
 		var ScheduleView = Backbone.View.extend({
 	el: $(".content"),
-
-	
-			
 	
     initialize: function () {
     	// console.log(Schedule);
@@ -45,13 +42,14 @@
 	
 	// Render the view
     render: function () {
-    	// console.log("test1");
-		this.$el.html(ScheduleTemplate);
+    	var self = this;
+
+			this.$el.html(ScheduleTemplate);
     	this.$el.find("ul#table").html('<li><span>Date</span><span id="team1">Home v</span><span>Result</span><span id="team2">Out v</span></li>');
-		_.each(this.collection.models, function (item) {
-        	this.renderSchedule(item);
-        }, this);
-        // this.$el.find("#filter").append(this.createSelect());
+			_.each(this.collection.models, function (item) {
+      	this.renderSchedule(item);
+      }, this);
+       // this.$el.find("#filter").append(this.createSelect());
 
 
     },

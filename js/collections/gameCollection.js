@@ -6,16 +6,20 @@ define([
   var Game = Backbone.Collection.extend({
     
     model: SetModel,
-    url: config.api_url + "games/?tournament_id=" + config.tournamentID,
-    // url: 'https://api.leaguevine.com/v1/game_scores/?tournament_id=18519',
+    url: config.api_url + "game_scores/?tournament_id=" + config.tournamentID,
+    game_id: 90024, // straks uit de route
     
     parse: function(data) {
-        
-        console.log("data to parse: ", data);
+        // returnData = [];
+        // _.each(data.objects, function(set){
+        //   if(set.game_id == this.game_id){
+        //     returnData.push(set);
+        //     console.log("Set: ", set);
+        //   }
+        // });
 
         return data.objects;
     },
-
     initialize: function () {
       console.log("Game collection initialized");
     }

@@ -9,8 +9,8 @@ define([
     // url: 'https://api.leaguevine.com/v1/games/?tournament_id=18519',
     
     parse: function(data) {
-
-      console.log("data to parse: ", data);
+      console.log("url");
+      console.log("scheduledata: ", data);
 
       return data.objects;
     },

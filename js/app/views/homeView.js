@@ -1,9 +1,8 @@
-/* filename: js/views/home/home.js */
 
 (function () {
 	"use strict";
 	define([
-		'text!templates/game.html'
+		'text!templates/home.html'
 	], function (HomeTemplate) {
 		// console.log(this);
 		var HomeView = Backbone.View.extend({

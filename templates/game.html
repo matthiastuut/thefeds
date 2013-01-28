@@ -3,19 +3,8 @@
   <nav class="actions">
     <button id="showForm">Add new set</button>
   </nav>
-  <table>
-    <thead>
-      <tr>
-        <th>Set</th>
-        <th>Team 1</th>
-        <th>Result</th>
-        <th>Team 2</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody id="gameData">
-    </tbody>
-  </table>
+  <div id="gameData">
+  </div>
 
   <form id="addSet" action="#">
   <h1>Add set</h1>
@@ -34,9 +23,9 @@
 
 
 <script id="setTemplate" type="text/template">
-    <td><%= id %></td>
-    <td><%= team_1.name %></td>
-    <td><%= team_1_score %> - <%= team_2_score %></td>
-    <td><%= team_2.name %></td>
-    <td><a href="#" class="delete">Delete</a></td>
+    <p>game_id</p>
+    <div>
+      <p><%= team_1_score %></p>
+      <p><%= team_2_score %></p>
+    </div>
 </script>

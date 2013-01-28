@@ -11,12 +11,8 @@
 			
 			el: $(".content"),
 			
-			initialize: function(){
-			
-				var self = this;			
+			initialize: function(){		
 				this.collection = new rankingCollection();
-				
-				this.render();
 			},
 			
 			render: function () {

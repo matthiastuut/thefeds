@@ -16,6 +16,7 @@ define([
     },
 
     initialize: function(){
+      console.log("Schedule Collection initialized");
     },
     comparator : function(schedule) {
 		// Sort by team name home team

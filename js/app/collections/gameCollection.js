@@ -1,34 +1,24 @@
 // # Define game collection #
 define([
-  'js/app/models/setModel.js',
-  'app/config'
-], function(SetModel){
-  GameCollection = Backbone.Collection.extend({
-    // Specifiy model for this collection
-  // Specifiy model for this collection
-  model: SetModel,
-   url: GameData,
-  parse: function(data) {
-      // what do we get from the API?    
-      // we could log data, right? Let's!
-      console.log("data to parse: ", data);
-      
-      return data.objects;
-  },
 
-  // Sort on team1Score
-  // comparator: function(game){
-  //   return game.get("team1");
-  // },
-  // Initialize collection *(backbone method)*
-  initialize: function () {
-    this.logMessage("Game collection initialized");
-  },
-  
-  // Log message *(custom method)*
-  logMessage: function (message) {
-    console.log(message);
-  }
+  '/js/app/models/setModel.js',
+  '/js/app/config.js'
+], function(SetModel, config){
+  var Game = Backbone.Collection.extend({
+    
+    model: SetModel,
+    // url: config.api + "games/?tournament_id=" + config.tournamentID
+    url: 'https://api.leaguevine.com/v1/games/?tournament_id=18519',
+    
+    parse: function(data) {
+
+        console.log("data to parse: ", data);
+        return data.objects;
+    },
+
+    initialize: function () {
+      console.log("Game collection initialized");
+    }
 
  });
   return GameCollection;

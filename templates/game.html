@@ -1,10 +1,7 @@
 <h1 id="game_results">Game results</h1>
 <article id="game">
   <nav class="actions">
-    <ul>
-      <li id="filter"><label>Show:</label></li>
-      <li><button id="showForm">Add new set</button></li>
-    </ul>
+    <button id="showForm">Add new set</button>
   </nav>
   <table>
     <thead>
@@ -37,9 +34,9 @@
 
 
 <script id="setTemplate" type="text/template">
-    <td><%= number %></td>
-    <td><%= team1 %></td>
-    <td><%= team1Score %> - <%= team2Score %></td>
-    <td><%= team2 %></td>
+    <td><%= id %></td>
+    <td><%= team_1.name %></td>
+    <td><%= team_1_score %> - <%= team_2_score %></td>
+    <td><%= team_2.name %></td>
     <td><a href="#" class="delete">Delete</a></td>
 </script>

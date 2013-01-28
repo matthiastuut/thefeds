@@ -1,6 +1,6 @@
 define([
 ], function(){
-SetView = Backbone.View.extend({
+var SetView = Backbone.View.extend({
   // Define element (this.el)  
   tagName: "tr",
   
@@ -31,12 +31,8 @@ SetView = Backbone.View.extend({
 
   // Render view *(backbone method)*
   render: function () {
-    // Store template in variable
     var tmpl = _.template($("#setTemplate").html());
-    
-    // Inject the rendered tempate into the views element 
     this.$el.html(tmpl(this.model.toJSON()));
-
     return this;
   }
 });

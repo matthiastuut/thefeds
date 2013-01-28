@@ -2,10 +2,12 @@
 /**
  *	Tournaments Web App (Backbone example application)
  */
+
  (function () {
   "use strict";
 
    define([
+
       'app/router/router' // Request router.js
     ], function (Router) {
       var initialize = function () {
@@ -17,7 +19,7 @@
         initialize: initialize,
       };
       
-    console.log(scheduleData)
+    console.log(tournamentData)
 
     });
 }());

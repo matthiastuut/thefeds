@@ -16,7 +16,7 @@
     	// console.log(Schedule);
 		this.list = this.$el.find("#table");
 		// console.log(scheduleData);
-        this.collection = new Schedule(scheduleData);
+        this.collection = new Schedule(tournamentData);
         // this.collection = new Schedule(scheduleData);
 
 

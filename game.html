@@ -4,7 +4,9 @@
     <head>
         <meta charset="UTF-8" />
         <title>Frisbee score app</title>
-        <link rel="stylesheet" href="css/screen.css" />
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="css/style.css" />
 
     </head>
     <body>
@@ -16,7 +18,7 @@
               <li><button id="showForm">Add new set</button></li>
             </ul>
           </nav>
-          <table>
+          <table class="content">
             <thead>
               <tr>
                 <th>Set</th>
@@ -47,10 +49,10 @@
         
     
         <script id="setTemplate" type="text/template">
-            <td><%= number %></td>
-            <td><%= team1 %></td>
-            <td><%= team1Score %> - <%= team2Score %></td>
-            <td><%= team2 %></td>
+            <td><%= id %></td>
+            <td><%= team_1.name %></td>
+            <td><%= team_1_score %> - <%= team_2_score %></td>
+            <td><%= team_2.name %></td>
             <td><a href="#" class="delete">Delete</a></td>
         </script>
     
@@ -61,14 +63,7 @@
         <script src="js/libs/backbone-min.js"></script>
       
         <!-- Application -->
-        <script src="js/app/app.js"></script>
-        <!-- Models -->
-        <script src="js/app/models/setModel.js"></script>
-        <!-- Collections -->
-        <script src="js/app/collections/gameCollection.js"></script>
-        <!-- Views -->
-        <script src="js/app/views/setView.js"></script>
-        <script src="js/app/views/gameView.js"></script>
+        <script data-main="js/main" src="js/libs/require.js"></script>
         
         
         

@@ -71,7 +71,7 @@
 
 
 		this.$el.html(ScheduleTemplate);
-    	this.$el.find("ul#table").html('<li><span>Date</span><span id="team1">Home v</span><span>Result</span><span id="team2">Out v</span></li>');
+    	this.$el.find("ul#table").html('');
 		// _.each(this.collection.models, function (item) {
   //       	this.renderSchedule(item);
   //       }, this);

@@ -1,24 +1,24 @@
+define([], function (template) {
 
-(function () {
-	"use strict";
-	define([
-		'text!templates/teamstand.html',
-	], function (template) {
-		// console.log(this);
-		var teamstand = Backbone.View.extend({
+	var teamstand = Backbone.View.extend({
 			
-			el: "table",
+		tagName: "tr",
 			
-			initialize: function(){
-				console.log("teamstand init");
-			},
+		// Set reference to template
+		template: _.template($("#teamStats").html()),
+		
+		initialize: function(){
+		
+		
+		},
 
-			render: function () {
-				this.$el.append(template);			
-			}
-		});
-		return teamstand;
+		render: function () {
+			var tmpl = this.template;
+			this.$el.html(tmpl(this.model.toJSON()));
+			return this;
+		}
 	});
+
+	return teamstand;
 	
-	
-}());
+});

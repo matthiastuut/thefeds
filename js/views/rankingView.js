@@ -11,31 +11,53 @@
 			
 			el: $(".content"),
 			
-			initialize: function(){
-			
-				var self = this;			
-				this.collection = new rankingCollection();
+			initialize: function(){		
+				this.collection = new collection();
 				
-				this.render();
+				
 			},
 			
 			render: function () {
 				self = this;
-			
-				_.each(this.collection.models, function(item){
-					console.log("item = ",item);
-				    self.renderPool(item);
-				}, this);		
+				
+				console.log("render");
+				
+				// set template on the content
+				$(".content").html(template);
+				
+				
+				this.collection.fetch({
+				  success: function(data) {
+				  		
+				  	// empty the option
+				  	$("#teamselect").html("").append("<option value='0' disabled selected id='selectteam'>Selecteer een team</option>");	
+				  
+				      //console.log(self.collection.toJSON());
+				      _.each(self.collection.models, function(model){
+
+				          console.log("model",model);
+				          
+				          self.renderPool(model);				          
+				      });
+				      
+				      
+				    }
+				    
+				});
+				
 			},
 			
 			renderPool: function(item){
-				
-				console.log(item);
+			
 				var teamView = new teamstand({
 					model: item
 				});
 				
-				this.$el.find('.pool').append(teamView.render().el);
+				this.$el.find(".pool").append(teamView.render().el);
+				
+				console.log(item);
+				// append options
+				$("#teamselect").append("<option>"+item.get("team").name+"</option>");
 
 			},			
 			

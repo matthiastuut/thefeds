@@ -21,13 +21,19 @@
 			routes: {
 				'/schedule/:team'	:   'showScheduleTeam',
 				'/schedule'			:   'showSchedule',
-				'/game'				:   'showGame',
-				'/ranking'			: 	'showRanking',
-				'*path'				: 'defaultAction'
+				'/game/:id'				:   'showGame',
+				'/ranking/:team'	: 	'showRankingTeam',
+				'/ranking'			: 	'showRanking',		
+				'*path'				: 	'defaultAction'
 			},
 
 			showRanking: function (actions) {
 				rankingView.render();
+				console.log("Render Ranking");
+			},
+			
+			showRankingTeam: function (actions) {
+				rankingView.renderTeam(actions);
 				console.log("Render Ranking");
 			},
 
@@ -42,7 +48,7 @@
 			
 
 			showGame: function (actions) {
-				gameView.render();
+				gameView.renderGame(actions);
 				console.log("Render Game");
 			},
 

@@ -20,6 +20,11 @@
 				"change #teamselect": "changeTeam"
 			},
 			
+			renderTeam: function(team){
+			
+				this.render();
+			},
+			
 			changeTeam: function(){
 			
 				var teamID = $("#teamselect").val();
@@ -28,7 +33,7 @@
 				$(".row").removeClass("selected");
 				$("."+teamID).parent().addClass("selected");
 				
-				$(".tabs a:first-child").attr("href", "/#/:"+teamID);
+				$(".tabs a:first-child").attr("href", "/#/ranking/:"+teamID);
 				$(".tabs a:last-child").attr("href", "/#/schedule/:"+teamID);
 
 				

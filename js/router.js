@@ -1,4 +1,5 @@
-/* filename: js/router.js */
+/* filename: js/app/router/router.js */
+
 
 (function () {
 	"use strict";

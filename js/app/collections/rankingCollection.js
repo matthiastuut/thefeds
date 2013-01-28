@@ -8,11 +8,11 @@ define([
   model: model,
   
   // haal alle teams van de meegegeven season op
-  url: config.api_url+"tournament_teams/?tournament_ids=%5b"+config.tournamentID+"%5d",
+  url: config.api_url+"pools/?tournament_id="+config.tournamentID,
   
   parse: function(data) {
-  	console.log(data.objects);
-      return data.objects;
+ 	  // get info from 1st pool
+      return data.objects[0].standings;
   }  
   
 });

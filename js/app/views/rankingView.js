@@ -4,18 +4,18 @@
 	define([
 		'app/collections/rankingCollection',
 		'text!templates/ranking.html',
-	], function (collection, template) {
-		// console.log(this);
+		'/js/app/views/teamstand.js',
+	], function (collection, template, teamstand) {
+
 		var rankingView = Backbone.View.extend({
 			
 			el: $(".content"),
+			
 			initialize: function(){
 			
 				var self = this;
-				
+								
 				this.collection = new rankingCollection();
-				
-				console.log(this.collection);
 				
 				// Fetch data from the API, this is a "GET" request
 				this.collection.fetch({
@@ -23,18 +23,32 @@
 				    success: function(data) {
 				        // Loop through the fetched models 
 				        _.each(self.collection.models, function(model){
-				            // Set the url for each model
-				            console.log(model);
+				            self.renderPool(model);
 				        });
+				        
+				        
 				    }
 				});
 				
 				
 			},
 			
+			renderPool: function(model){
+			
+			
+
+			},			
+			
+			getTeaminfo: function(url){
+				
+				console.log(url);
+				
+			},
+			
 			
 			render: function () {
-				this.$el.html(template);
+				this.$el.html(template);			
+				
 			}
 		});
 		return new rankingView();

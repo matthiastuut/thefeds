@@ -42,9 +42,24 @@
 	
 	// Render the view
     render: function () {
-    	var self = this;
 
-			this.$el.html(ScheduleTemplate);
+
+    	this.collection.fetch({
+	  	  success: function(data) {
+	  	      //console.log(self.collection.toJSON());
+	  	      _.each(self.collection.models, function(model){
+	  	          // set a resource uri on the model
+	  	          //console.log("model data: ", model.toJSON());
+	  	          // console.log("model: ", model);
+	  	          model.url = model.get('resource_uri');
+	  	          // console.log(model.url);
+	  	      });
+	  	      // self.renderSchedule();
+	  	    }
+	  	});
+    	console.log("test1");
+		this.$el.html(ScheduleTemplate);
+
     	this.$el.find("ul#table").html('<li><span>Date</span><span id="team1">Home v</span><span>Result</span><span id="team2">Out v</span></li>');
 			_.each(this.collection.models, function (item) {
       	this.renderSchedule(item);

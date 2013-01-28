@@ -6,59 +6,53 @@
     'text!templates/game.html',
       'views/setView',
   ], function (Game, GameTemplate, SetView) {
-    var GameView = Backbone.View.extend({
-  // Define element (this.el)     
-  el: $(".content"),
+    var GameView = Backbone.View.extend({     
+      el: $(".content"),
   
-  // Initialize view *(backbone method)*
-  initialize: function () {
-    self = this;
-    this.table = this.$el.find("#gameData");
-    // Specify collection for this view
+      // Initialize view *(backbone method)*
+      initialize: function () {
+        this.table = this.$el.find("#gameData");
+        // Specify collection for this view
 
-    this.collection = new Game();
+        this.collection = new Game();
+        
+      },
 
-    // when you fetch:
-    // Backbone fetch => Collection parse => success callback
-    
-  },
-  
-  events: {
-      "click #showForm": "showForm"
-  },
+      // Render view *(backbone method)*
+      render: function () {
+        self = this;
 
-  // Render view *(backbone method)*
-  render: function () {
-  
-  	this.collection.fetch({
-  	  success: function(data) {
-  	      //console.log(self.collection.toJSON());
-  	      _.each(self.collection.models, function(model){
-  	          // set a resource uri on the model
-  	          //console.log("model data: ", model.toJSON());
-  	          // console.log("model: ", model);
-  	          model.url = model.get('resource_uri');
-  	          // console.log(model.url);
-  	      });
+        // set template on the content
+        $(".content").html(GameTemplate);
 
-  	      self.render();
-
-  	    }
-  	});
+        // Fetch
+      	this.collection.fetch({
+      	  success: function(data) {
+    	      //console.log(self.collection.toJSON());
+    	      _.each(self.collection.models, function(model){
+    	          // set a resource uri on the model
+    	          //console.log("model data: ", model.toJSON());
+    	          // console.log("model: ", model);
+    	          model.url = model.get('resource_uri');
+    	          // console.log(model.url);
+                self.renderGame(model);
+    	      });
+    	    }
+    	 });
   	
-  	this.collection.on("reset", this.render, this);
-  	this.collection.on("add", this.renderGame, this);
-  	this.collection.on("remove", this.removeSet, this);
+  	// this.collection.on("reset", this.render, this);
+  	// this.collection.on("add", this.renderGame, this);
+  	// this.collection.on("remove", this.removeSet, this);
   
   
-    var self = this;
-    self.$el.html();
-    self.$el.html(GameTemplate);
-    self.table.html("");
+    // var self = this;
+    // self.$el.html();
+    // self.$el.html(GameTemplate);
+    // self.table.html("");
 
-    _.each(self.collection.models, function (item) {
-      self.renderGame(item);
-    }, this);
+    // _.each(self.collection.models, function (item) {
+    //   self.renderGame(item);
+    // }, this);
 
   },
   
@@ -71,7 +65,6 @@
     });
 
     // Append the rendered HTML to the views element
-    console.log(setView.render().el);
     this.$el.find("#gameData").append(setView.render().el);
   },
 
@@ -80,11 +73,6 @@
     e.preventDefault();
       this.$el.find("#addSet").slideToggle();
   },
-
-  // Log message *(custom method)*
-  logMessage: function (message) {
-    console.log(message);
-  }
   
 });
 

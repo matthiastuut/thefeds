@@ -33,7 +33,6 @@
 				self = this;
 				
 				console.log("render");
-				
 				// set template on the content
 				$(".content").html(template);
 				

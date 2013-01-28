@@ -6,19 +6,12 @@ define([
   var Game = Backbone.Collection.extend({
     
     model: SetModel,
-    url: config.api_url + "game_scores/?tournament_id=" + config.tournamentID,
-    game_id: 90024, // straks uit de route
+    url: config.api_url + "game_scores/?tournament_id=" + config.tournamentID + "&game_id=" + 88502,
     
     parse: function(data) {
-        // returnData = [];
-        // _.each(data.objects, function(set){
-        //   if(set.game_id == this.game_id){
-        //     returnData.push(set);
-        //     console.log("Set: ", set);
-        //   }
-        // });
+        console.log(data.objects[0].game_sets.toJSON());
 
-        return data.objects;
+        return data.objects[0].game_sets;
     },
     initialize: function () {
       console.log("Game collection initialized");

@@ -20,23 +20,7 @@
 
     // when you fetch:
     // Backbone fetch => Collection parse => success callback
-    this.collection.fetch({
-      success: function(data) {
-          //console.log(self.collection.toJSON());
-          _.each(self.collection.models, function(model){
-              // set a resource uri on the model
-              //console.log("model data: ", model.toJSON());
-              // console.log("model: ", model);
-              model.url = model.get('resource_uri');
-              // console.log(model.url);
-          });
-          self.render();
-        }
-    });
     
-    this.collection.on("reset", this.render, this);
-    this.collection.on("add", this.renderGame, this);
-    this.collection.on("remove", this.removeSet, this);
   },
   
   events: {
@@ -45,6 +29,26 @@
 
   // Render view *(backbone method)*
   render: function () {
+  
+  	this.collection.fetch({
+  	  success: function(data) {
+  	      //console.log(self.collection.toJSON());
+  	      _.each(self.collection.models, function(model){
+  	          // set a resource uri on the model
+  	          //console.log("model data: ", model.toJSON());
+  	          // console.log("model: ", model);
+  	          model.url = model.get('resource_uri');
+  	          // console.log(model.url);
+  	      });
+  	      self.render();
+  	    }
+  	});
+  	
+  	this.collection.on("reset", this.render, this);
+  	this.collection.on("add", this.renderGame, this);
+  	this.collection.on("remove", this.removeSet, this);
+  
+  
     var self = this;
     self.$el.html();
     self.$el.html(GameTemplate);
@@ -85,4 +89,4 @@
 // Kickstart the application by creating an instance of GameView
 return new GameView();
   });
-}());
+}());	

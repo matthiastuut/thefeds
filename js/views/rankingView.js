@@ -13,10 +13,13 @@
 			
 			initialize: function(){		
 				this.collection = new rankingCollection();
+				
 			},
 			
 			render: function () {
 				self = this;
+				
+				console.log("render");
 			
 				_.each(this.collection.models, function(item){
 					console.log("item = ",item);
@@ -25,7 +28,8 @@
 			},
 			
 			renderPool: function(item){
-				
+			
+
 				console.log(item);
 				var teamView = new teamstand({
 					model: item

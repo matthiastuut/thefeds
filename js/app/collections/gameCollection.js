@@ -10,7 +10,7 @@ define([
     // url: 'https://api.leaguevine.com/v1/game_scores/?tournament_id=18519',
     
     parse: function(data) {
-
+        
         console.log("data to parse: ", data);
 
         return data.objects;

@@ -30,10 +30,10 @@ define([
 	    defaults: {
 	    	// Set defaults for unkown values
 			'date' : 'unknown',
-			'team1' : 'unknown',
-			'team1Score' : '-',
-			'team2Score' : '-',
-			'team2' : 'unknown'
+			'team_1' : 'unknown',
+			'team_1_Score' : '-',
+			'team_2_Score' : '-',
+			'team_2' : 'unknown'
 	    }
   });
   // Return the model for the module

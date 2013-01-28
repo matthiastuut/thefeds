@@ -12,6 +12,7 @@ define([
   
   parse: function(data) {
  	  // get info from 1st pool
+ 	  console.log("Rankingdata",data.objects[0].standings)
       return data.objects[0].standings;
   }  
   

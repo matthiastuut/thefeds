@@ -13,29 +13,29 @@
 			
 			initialize: function(){
 			
-				var self = this;
-								
+				var self = this;			
 				this.collection = new rankingCollection();
 				
-				// Fetch data from the API, this is a "GET" request
-				this.collection.fetch({
-				    // If the request succeeds, the success callback function is executed 
-				    success: function(data) {
-				        // Loop through the fetched models 
-				        _.each(self.collection.models, function(model){
-				            self.renderPool(model);
-				        });
-				        
-				        
-				    }
-				});
-				
-				
+				this.render();
 			},
 			
-			renderPool: function(model){
+			render: function () {
+				self = this;
 			
+				_.each(this.collection.models, function(item){
+					console.log("item = ",item);
+				    self.renderPool(item);
+				}, this);		
+			},
 			
+			renderPool: function(item){
+				
+				console.log(item);
+				var teamView = new teamstand({
+					model: item
+				});
+				
+				this.$el.find('.pool').append(teamView.render().el);
 
 			},			
 			
@@ -43,13 +43,8 @@
 				
 				console.log(url);
 				
-			},
-			
-			
-			render: function () {
-				this.$el.html(template);			
-				
 			}
+			
 		});
 		return new rankingView();
 	});

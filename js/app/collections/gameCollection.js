@@ -21,6 +21,6 @@ define([
     }
 
  });
-  return GameCollection;
+  return Game;
 
 });

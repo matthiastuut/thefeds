@@ -18,13 +18,8 @@
 			
 			// Define routes to pages (hash urls #/page_name)
 			routes: {
-				// Define some URL routes
-				//'tournament':   'showTournament',
-				//'ranking'	: 	'showRanking',
-				'/schedule'	:   'showSchedule',
-				'/game'		:   'showGame',
-
-				// Default
+				'schedule'	:   'showSchedule',
+				'game'		:   'showGame',
 				'*path': 'defaultAction'
 			},
 
@@ -37,10 +32,6 @@
 				console.log("rendering schedule"+ scheduleView);
 			},
 
-			showRanking: function (actions) {
-				rankingView.render();
-			},
-
 			showGame: function (actions) {
 				gameView.render();
 			},
@@ -51,6 +42,7 @@
 		});
 
 		var initialize = function () {
+			console.log("router init!")
 			var app_router = new AppRouter();
 			Backbone.history.start();
 		};

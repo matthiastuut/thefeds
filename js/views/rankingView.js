@@ -2,9 +2,9 @@
 (function () {
 	"use strict";
 	define([
-		'app/collections/rankingCollection',
+		'collections/rankingCollection',
 		'text!templates/ranking.html',
-		'/js/app/views/teamstand.js',
+		'js/views/teamstand.js',
 	], function (collection, template, teamstand) {
 
 		var rankingView = Backbone.View.extend({

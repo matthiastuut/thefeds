@@ -1,6 +1,6 @@
 // # Define set model #
 define([
-  'app/config'
+  'config'
 ], function(config){
   var SetModel = Backbone.Model.extend({
     

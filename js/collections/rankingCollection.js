@@ -1,7 +1,7 @@
 // # Define game collection #
 define([
-  '/js/app/models/teamModel.js',
-  '/js/app/config.js'
+  'models/teamModel',
+  'config'
 ], function(model, config){
   rankingCollection = Backbone.Collection.extend({
 

@@ -2,9 +2,9 @@
 (function () {
   "use strict";
   define([
-      'app/collections/gameCollection',
+      'collections/gameCollection',
     'text!templates/game.html',
-      'app/views/setView',
+      'views/setView',
   ], function (Game, GameTemplate, SetView) {
     var GameView = Backbone.View.extend({
   // Define element (this.el)     

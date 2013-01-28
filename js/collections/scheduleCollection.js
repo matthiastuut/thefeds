@@ -1,6 +1,6 @@
 define([
-  'js/app/models/gameScheduleModel.js',
-  '/js/app/config.js'
+  'models/gameScheduleModel',
+  'config'
 ], function(GameSchedule, config){
   var Schedule = Backbone.Collection.extend({
 

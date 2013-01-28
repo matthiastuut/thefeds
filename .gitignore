@@ -1,6 +1,8 @@
 
 .DS_Store
 
+*.DS_Store
+
 js/.DS_Store
 
 js/app/.DS_Store

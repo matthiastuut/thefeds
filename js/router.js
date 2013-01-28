@@ -1,4 +1,4 @@
-/* filename: js/app/router/router.js */
+/* filename: js/router/router.js */
 
 
 (function () {
@@ -15,7 +15,7 @@
 	//], function (config, homeView, tournamentView, scheduleView, rankingView, gameView) {
 		], function (config, gameView, scheduleView, rankingView) {
 		var AppRouter = Backbone.Router.extend({
-			tournamentView:"",
+			// tournamentView:"",
 			
 			// Define routes to pages (hash urls #/page_name)
 			routes: {
@@ -24,8 +24,8 @@
 				'*path': 'defaultAction'
 			},
 
-			showTournament: function (actions) {
-				tournamentView.render();
+			showRanking: function (actions) {
+				rankingView.render();
 			},
 
 			showSchedule: function (actions) {

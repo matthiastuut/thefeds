@@ -24,7 +24,7 @@
 
 // Filename: models/project
 define([
-	'app/config'
+	'config'
 ], function(config){
   var GameSchedule = Backbone.Model.extend({
 	    defaults: {

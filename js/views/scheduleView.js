@@ -2,9 +2,9 @@
 (function () {
 	"use strict";
 	define([
-  		'app/collections/scheduleCollection',
+  		'collections/scheduleCollection',
 		'text!templates/schedule.html',
-  		'app/views/GameScheduleView',
+  		'views/gameScheduleView',
 	], function (Schedule, ScheduleTemplate,GameScheduleScheduleView) {
 		var ScheduleView = Backbone.View.extend({
 	el: $(".content"),

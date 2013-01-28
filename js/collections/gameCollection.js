@@ -1,7 +1,7 @@
 // # Define game collection #
 define([
-  '/js/app/models/setModel.js',
-  '/js/app/config.js'
+  'models/setModel',
+  'config'
 ], function(SetModel, config){
   var Game = Backbone.Collection.extend({
     

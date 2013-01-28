@@ -43,7 +43,7 @@
 		});
 
 		var initialize = function () {
-			console.log("router init!")
+			console.log("router init!");
 			var app_router = new AppRouter();
 			Backbone.history.start();
 		};

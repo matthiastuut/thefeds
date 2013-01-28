@@ -1,6 +1,6 @@
 // # Define set model #
 define([
-  'app/config'
+  'config'
 ], function(config){
   var teamModel = Backbone.Model.extend({
   // Set model defaults *(backbone method)*

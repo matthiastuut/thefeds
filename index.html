@@ -16,7 +16,7 @@
     
     	<form action="#" class="teamselect">
     		<select name="" id="teamselect">
-    			<option value="0" disabled selected>Selecteer een team</option>
+    			<option value="0" disabled selected id="selectteam">Selecteer een team</option>
     		</select>
     	</form>	
     	
@@ -33,5 +33,15 @@
 		<script src="js/libs/underscore-min.js"></script>
 		<script src="js/libs/backbone-min.js"></script>
 		<script data-main="js/main" src="js/libs/require.js"></script>
+		
+		<script id="teamStats" type="text/template">
+		   		<td><%= team.name %></td>
+		   		<td><%= games_played %></td>
+		   		<td><%= wins %></td>
+		   		<td><%= losses %></td>
+		   		<td><%= points_scored %></td>
+		   		<td><%= points_allowed %></td>
+		</script>
+		
 	</body>
 </html>

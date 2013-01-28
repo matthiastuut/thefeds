@@ -4,7 +4,7 @@ define([
 ], function(config){
   var GameSchedule = Backbone.Model.extend({
 
-      url: : config.api_url + 'games/?tournament_id=' + config.tournamentID,
+      url: config.api_url + 'games/?tournament_id=' + config.tournamentID,
 
       // Initialize model *(backbone method)*
       initialize: function () {

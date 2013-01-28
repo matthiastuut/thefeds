@@ -19,10 +19,11 @@
 			
 			// Define routes to pages (hash urls #/page_name)
 			routes: {
-				'/schedule'	:   'showSchedule',
-				'/game'		:   'showGame',
-				'/ranking'	:   'showRanking',
-				'*path': 'defaultAction'
+				'/schedule/:team'	:   'showScheduleTeam',
+				'/schedule'			:   'showSchedule',
+				'/game'				:   'showGame',
+				'/ranking'			: 	'showRanking',
+				'*path'				: 'defaultAction'
 			},
 
 			showRanking: function (actions) {
@@ -34,6 +35,11 @@
 				scheduleView.render();
 				console.log("Render Schedule");
 			},
+			
+			showScheduleTeam: function (actions) {
+				scheduleView.renderTeam(actions);
+			},	
+			
 
 			showGame: function (actions) {
 				gameView.render();

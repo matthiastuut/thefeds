@@ -4,8 +4,9 @@
 	define([
 		'collections/rankingCollection',
 		'text!templates/ranking.html',
-		'js/views/teamstand.js',
-	], function (collection, template, teamstand) {
+		'views/teamstand',
+		'router'
+	], function (collection, template, teamstand, router) {
 
 		var rankingView = Backbone.View.extend({
 			
@@ -13,11 +14,20 @@
 			
 			initialize: function(){		
 				this.collection = new collection();
-				
-				
+
+			},
+			
+			events: {
+				"change #teamselect": "changePage"
+			},
+			
+			changePage: function(e){
+				console.log(e);
 			},
 			
 			render: function () {
+			
+			
 				self = this;
 				
 				console.log("render");

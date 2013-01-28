@@ -28,10 +28,9 @@
 				$(".row").removeClass("selected");
 				$("."+teamID).parent().addClass("selected");
 				
-				$.each($(".tabs a"), function(){
-					var href = $(this).attr("href");
-					$(this).attr("href", href+"/:"+teamID);
-				});
+				$(".tabs a:first-child").attr("href", "/#/:"+teamID);
+				$(".tabs a:last-child").attr("href", "/#/schedule/:"+teamID);
+
 				
 				
 			},

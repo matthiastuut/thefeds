@@ -1,25 +1,331 @@
-body{
-	padding-top: 40px;
-	background: #000 url('../images/background.jpg') no-repeat;
-	background-size: cover;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background: #cecece;
+	font-family: arial, sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-table{
-	background: rgba(255,255,255,.6);
-	box-shadow: 0px 3px 5px #444;
+.navbar{
+	background: #4b607c;
+	height: 2.5em ; /* 40/16 */;
+	position: relative;
+	text-align: center;
+	padding: 5 0em;
+	width: 100%;
+	padding: .5em 0;
+	border-bottom: 1px solid #841b18;
+	box-shadow: 0px 3px 5px rgba(0,0,0,.2);
+	background: linear-gradient(to bottom, #dc441d 0%,#ab1f0e 100%);
+	background: -webkit-linear-gradient(top, #dc441d 0%,#ab1f0e 100%);
 }
 
-table tr td, table tr th{
+.navbar a.backbtn{
+	position: absolute;
+	left: 0;
+	margin: .25em 0 .25em .5em;
+	height: 2em;
+	line-height: 2em;
+	width: 3em;
+	border-radius:0.225em;
+	background: #a21c11;
+	box-shadow: inset 0 2px 2px rgba(0,0,0,.4), 0px 1px 1px rgba(255,255,255,.2);
+	text-decoration:none;
+	color: #fff;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-shadow: 0px 1px 2px #000;
+	
+}
+
+.navbar h1{
+	font-family: 'Yanone Kaffeesatz', sans-serif;	
+	color: #f7f7ff;
+	display: inline-block;
+	height: 1.66666667em;
+	line-height: 1.66666667em;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 2.66666667em; /* 4 / 1.5*/
+	font-size: 1.5em;
 	overflow: hidden;
+	white-space: nowrap;
 	text-overflow:ellipsis;
-	overflow:hidden;
-	white-space:nowrap;
+	text-shadow: 0px 1px 2px #000;
+	
 }
 
-@media (max-width: 979px){
+.content{
+	width: 100%;
+	box-sizing: border-box;
+	background: #f5f5f5;
+}
 
-	body {
-		padding-top: 0;
-	}
 
+.pool{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+.pool tr:nth-child(odd) td{
+	background: rgba(0,0,0,.03);	
+}
+
+.pool tr th{
+	text-align: center;
+	font-weight: bold;	
+}
+
+.pool tr th, .pool tr td{
+	padding: .5em;
+	text-align: center;
+}
+
+
+
+.pool tbody tr th:first-child, .pool tbody tr td:first-child{
+	width: 40%;
+	text-align: left;
+}
+
+.pool tr td, .pool tr th{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;	
+}
+
+
+
+.teamselect{
+	width: 100%;
+	box-sizing: border-box;
+	padding:.75em 1.25em; /* 20/16 */
+	background: #303030;
+}
+
+.teamselect select{
+	width: 100%;
+}
+
+
+.tabs{
+	width: 100%;
+	box-sizing: border-box;
+	padding:.75em 2%; /* 20/16 */
+	background: #383838;
+	background: linear-gradient(to bottom, #383838 0%,#3b3b3b 100%);
+	background: -webkit-linear-gradient(top, #383838 0%,#3b3b3b 100%);
+	box-shadow: inset 0 1px 1px rgba(255,255,255,.1), 0px 0px 3px rgba(0,0,0,.9);
+	text-align: center;
+}
+
+.tabs a{
+	color: #adadad;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-decoration: none;
+	background: #333333;
+	display: inline-block;
+	width: 48%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;	
+	height: 2em;
+	line-height: 2em;
+	box-shadow: inset 0 1px 1px rgba(255,255,255,.1), 0px 0px 3px rgba(0,0,0,.8);
+	border-radius:0.225em;	
+}
+
+.tabs a:first-child{
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.tabs a:last-child{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.tabs a.current{
+	color: #fff;
+	background: #232323;
+	box-shadow: inset 0 1px 1px rgb(0,0,0);
+}
+
+.mainfooter{
+	width: 100%;
+	box-sizing: border-box;
+	padding:.75em 1.25em; /* 20/16 */
+	background: #cecece;
+	box-shadow: inset 0px 1px 2px rgba(0,0,0,.2);
+}
+
+.mainfooter p{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color: #666666;
+}
+
+
+.list{
+	width: 100%;
+	overflow: hidden;
+}
+
+
+.list.set li{
+	padding: .5em 2em;
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	overflow: hidden;
+}
+
+.list li{
+	clear: both;
+	border-bottom: 1px solid #cecece;
+}
+.list li.disabled a{
+	color: #999;
+	background:none;
+}
+
+.list a{
+	text-decoration: none;
+	color: #000;
+	padding:1.25em 2.5em 1.25em 1.25em; /* 20/16 */
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	overflow: hidden;
+	background: url('../images/listarrow.svg') 98% center no-repeat;
+	background-size:1em auto;
+}
+
+
+.list li:nth-child(odd) a{
+	background-color: rgba(0,0,0,.03);	
+}
+
+
+
+.list .date{
+	width: 100%;
+	font-size: .75em;
+	display: block;
+	text-align: center;
+	margin-bottom: .5em;
+}
+
+.list .team{
+	width: 40%;
+	display:block;
+	float: left;
+	text-align: right;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;	
+	font-size: .85em;
+	font-weight: bold;
+	line-height: 3em;
+}
+
+.list span.team.home{
+	text-align: left;
+}
+
+
+.list .score{
+	width: 16%;
+	display:block;	
+	float: left;
+	text-align: center;
+	margin: 0 2%;
+}
+
+.list .score span{
+	background: #fff;
+	width: 50%;
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 2em;	
+	border: 1px solid #cecece;
+	padding: .1em 0;
+	border-radius:0.225em;
+}
+
+.list .score span:first-child{
+	border-right: none;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.list .score span:last-child{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.titlebar{
+	width: 100%;
+	box-sizing: border-box;
+	padding:.75em 1.25em; /* 20/16 */
+	background: #303030;
+	color: #fff;
+	font-family: 'Yanone Kaffeesatz', sans-serif;	
+}
+
+form{
+	width: 100%;
+	box-sizing: border-box;
+	padding:.75em 1.25em; /* 20/16 */
+}
+
+form button{
+	width: 100%;
+	padding:.75em 1.25em; /* 20/16 */
+	-webkit-appearance: none;
 }

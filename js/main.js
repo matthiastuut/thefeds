@@ -16,7 +16,7 @@
 
 	require([
 		// Load our app module and pass it to our definition function
-		'app/app'
+		'app'
 
 		// Some plugins have to be loaded in order due to their non AMD compliance
 		// Because these scripts are not "modules" they do not pass any values to the definition function below

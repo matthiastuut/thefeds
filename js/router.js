@@ -4,13 +4,13 @@
 (function () {
 	"use strict";
 	define([
-		'../config',
+		'config',
 		// 'views/tournament/tournament',
-		'../views/gameView',
-		'../views/scheduleView',
+		'views/gameView',
+		'views/scheduleView',
 		// 'views/tournament/ranking',
 		 // '../views/gameView'
-		 '../views/rankingView'
+		 'views/rankingView'
 		
 	//], function (config, homeView, tournamentView, scheduleView, rankingView, gameView) {
 		], function (config, gameView, scheduleView, rankingView) {

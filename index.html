@@ -43,6 +43,18 @@
               <span><%= team_2_score %></span>
           </span>
     </script>
+
+    <script id="scheduleTemplate" type="text/template"> 
+        <a href="#/game/:<%= id %>">
+            <span class="date"><%= start_time %></span>
+            <span class="team home"><%= team_1.name %></span> 
+            <span class="score">
+                <span><%= team_1_score %></span>
+                <span><%= team_2_score %></span>
+            </span>
+            <span class="team away"><%= team_2.name %></span>
+        </a>
+    </script>
 		
 	</body>
 </html>

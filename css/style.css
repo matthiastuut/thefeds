@@ -259,7 +259,7 @@ table {
 	margin-bottom: .5em;
 }
 
-.list .team{
+.list .team, .list .set{
 	width: 40%;
 	display:block;
 	float: left;
@@ -272,7 +272,12 @@ table {
 	line-height: 3em;
 }
 
-.list span.team.home{
+.list .set {
+	width: 30%;
+	margin-left: 3em;
+}
+
+.list span.team.home, .list .set{
 	text-align: left;
 }
 

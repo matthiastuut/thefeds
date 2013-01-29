@@ -12,9 +12,7 @@ define([
     },
     
     defaults: {
-      id : 0,
-      team_1 : "unknown",
-      team_2 : "unknown",
+      number : 0,
       team_1_score : "?",
       team_2_score : "?",
     },

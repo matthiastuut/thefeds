@@ -9,9 +9,8 @@ define([
     url: config.api_url + "game_scores/?tournament_id=" + config.tournamentID + "&game_id=" + 88502,
     
     parse: function(data) {
-        console.log(data.objects[0].game_sets.toJSON());
-
-        return data.objects[0].game_sets;
+      console.log(data.objects[0].game_sets);
+      return data.objects[0].game_sets;
     },
     initialize: function () {
       console.log("Game collection initialized");

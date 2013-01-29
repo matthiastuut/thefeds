@@ -48,7 +48,7 @@
 			
 
 			showGame: function (actions) {
-				gameView.renderGame(actions);
+				gameView.getGame(actions);
 				console.log("Render Game");
 			},
 

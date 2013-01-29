@@ -3,7 +3,6 @@ The Feds
 
 Inleidend
 ---------
-Om te zorgen dat we i.i.g. iets hebben moeten we voor vrijdag a.s. het volgende hebben:
 
 
 Dashboard / home

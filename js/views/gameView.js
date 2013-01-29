@@ -72,10 +72,6 @@
     return game_id;
   }
 
-  showForm: function (e) {
-    e.preventDefault();
-      this.$el.find("#addSet").slideToggle();
-  },
   
 });
 

@@ -44,10 +44,9 @@
     render: function () {
 
 
-<<<<<<< HEAD
-=======
+
         var self = this ;
->>>>>>> origin
+
     	this.collection.fetch({
             // If the request succeeds, the success callback function is executed 
             success: function(data) {
@@ -71,20 +70,13 @@
 
 
 		this.$el.html(ScheduleTemplate);
-<<<<<<< HEAD
 
-    	this.$el.find("ul#table").html('<li><span>Date</span><span id="team1">Home v</span><span>Result</span><span id="team2">Out v</span></li>');
-			_.each(this.collection.models, function (item) {
-      	this.renderSchedule(item);
-      }, this);
-       // this.$el.find("#filter").append(this.createSelect());
-=======
     	this.$el.find("ul#table").html('');
 		// _.each(this.collection.models, function (item) {
   //       	this.renderSchedule(item);
   //       }, this);
         // this.$el.find("#filter").append(this.createSelect());
->>>>>>> origin
+
 
 
     },

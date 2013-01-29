@@ -56,15 +56,16 @@
                     console.log(self);
                 });
 
-                self.collection.reset(data, { silent: true });
-				console.log(self.filterType);
-		        var filterType = self.filterType,
-		            filtered = _.filter(self.collection.models, function (item) {
-		            return item.get('id').toLowerCase() === filterType;
-		        });
-		        console.log(filtered);
-		        this.collection.reset(filtered);
-
+                if(team){
+					self.collection.reset(Schedule, { silent: true });
+			        var filterType = team,
+			            filtered = _.filter(self.collection.models, function (item) {
+			            console.log(item.get("team_2"));
+			            return item.get("team_1").toLowerCase() === filterType;
+			        });
+			        self.collection.reset(filtered);
+			        console.log(self.collection);
+		    	}
             },
 
             error: function(data){

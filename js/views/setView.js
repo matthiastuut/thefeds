@@ -12,7 +12,7 @@ var SetView = Backbone.View.extend({
   // Render view *(backbone method)*
   render: function () {
     var tmpl = this.template;
-    this.$el.html(tmpl(this.model.toJSON()));
+    this.$el.html(tmpl(this.model));
     return this;
   }
 });

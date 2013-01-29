@@ -19,9 +19,9 @@
       },
 
       // Render view *(backbone method)*
-      render: function () {
+      render: function (actions) {
         self = this;
-
+        console.log(actions);
         // set template on the content
         $(".content").html(GameTemplate);
 
@@ -68,6 +68,9 @@
     this.$el.find("#gameData").append(setView.render().el);
   },
 
+  getGame: function (game_id) {
+    return game_id;
+  }
 
   showForm: function (e) {
     e.preventDefault();

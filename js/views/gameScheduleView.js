@@ -32,7 +32,7 @@ GameScheduleScheduleView = Backbone.View.extend({
 	// Render view
     render: function () {
          var tmpl = _.template($("#scheduleTemplate").html());
-         console.log(this.model);
+         // console.log(this.model);
         this.$el.html(tmpl(this.model.toJSON()));
         return this;
     }

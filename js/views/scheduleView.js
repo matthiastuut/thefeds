@@ -55,15 +55,13 @@
                     model.url = model.get('resource_uri');
 
                     self.renderSchedule(model);
-                    console.log(self);
                 });
 
                 if(team){
-					self.collection.reset(Schedule, { silent: true });
+					self.collection.reset(scheduledata, { silent: true });
 			        var filterType = team,
 			            filtered = _.filter(self.collection.models, function (item) {
-			            console.log(item.get("team_2"));
-			            return item.get("team_1").toLowerCase() === filterType;
+			            return item.get("team_1").toLowerCase() === filterType || item.get("team_2").toLowerCase() === filterType;
 			        });
 			        self.collection.reset(filtered);
 			        console.log(self.collection);

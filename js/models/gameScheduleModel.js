@@ -5,7 +5,7 @@ define([
   var GameSchedule = Backbone.Model.extend({
 	    defaults: {
 	    	// Set defaults for unkown values
-			'date' : 'unknown',
+			'start_time' : 'unknown',
 			'team_1' : 'unknown',
 			'team_1_Score' : '-',
 			'team_2_Score' : '-',

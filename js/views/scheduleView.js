@@ -35,7 +35,6 @@
                     // Set the url for each model
                     model.url = model.get('resource_uri');
 
-
 			    	model.attributes.start_time = new Date(model.attributes.start_time);
 			        model.attributes.start_time = $.format.date(model.attributes.start_time, "ddd d MMMM om HH:mm");
 

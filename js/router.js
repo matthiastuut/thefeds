@@ -19,14 +19,21 @@
 			
 			// Define routes to pages (hash urls #/page_name)
 			routes: {
-				'/schedule'	:   'showSchedule',
-				'/game'		:   'showGame',
-				'/ranking'	:   'showRanking',
-				'*path': 'defaultAction'
+				'/schedule/:team'	:   'showScheduleTeam',
+				'/schedule'			:   'showSchedule',
+				'/game/:id'				:   'showGame',
+				'/ranking/:team'	: 	'showRankingTeam',
+				'/ranking'			: 	'showRanking',		
+				'*path'				: 	'defaultAction'
 			},
 
 			showRanking: function (actions) {
 				rankingView.render();
+				console.log("Render Ranking");
+			},
+			
+			showRankingTeam: function (actions) {
+				rankingView.renderTeam(actions);
 				console.log("Render Ranking");
 			},
 
@@ -34,9 +41,14 @@
 				scheduleView.render();
 				console.log("Render Schedule");
 			},
+			
+			showScheduleTeam: function (actions) {
+				scheduleView.renderTeam(actions);
+			},	
+			
 
 			showGame: function (actions) {
-				gameView.render();
+				gameView.renderGame(actions);
 				console.log("Render Game");
 			},
 

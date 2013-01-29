@@ -18,13 +18,28 @@
 			},
 			
 			events: {
-				"change #teamselect": "changePage"
+				"change #teamselect": "changeTeam"
 			},
 			
-			changePage: function(ev){
-				var team = $(ev.target);
+			renderTeam: function(team){
+			
+				this.render();
 				
-				console.log(team);
+			},
+			
+			changeTeam: function(){
+			
+				var teamID = $("#teamselect").val();
+				
+				// add and remove classes
+				$(".row").removeClass("selected");
+				$("."+teamID).parent().addClass("selected");
+				
+				$(".tabs a:first-child").attr("href", "/#/ranking/:"+teamID);
+				$(".tabs a:last-child").attr("href", "/#/schedule/:"+teamID);
+
+				
+				
 			},
 			
 			render: function () {
@@ -68,7 +83,7 @@
 				
 				console.log(item);
 				// append options
-				$("#teamselect").append("<option>"+item.get("team").name+"</option>");
+				$("#teamselect").append("<option value='"+item.get("team_id")+"'>"+item.get("team").name+"</option>");
 
 			},			
 			

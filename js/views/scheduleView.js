@@ -29,19 +29,25 @@
                 // Loop through the fetched models 
                 $(".preloader").remove();
 				$(".content").addClass("animated fadeInDown");
+          		$(".backbtn").hide();
                 _.each(self.collection.models, function(model){
 
                     // Set the url for each model
                     model.url = model.get('resource_uri');
 
-                    self.renderSchedule(model);
-                });
 
-                if(team){
-                	$(".list li a").hide();
-                	console.log(".list li a."+team+"");
-                	$(".list li a."+team+"").show();
-		    	}
+			    	model.attributes.start_time = new Date(model.attributes.start_time);
+			        model.attributes.start_time = $.format.date(model.attributes.start_time, "ddd d MMMM om HH:mm");
+
+                    if(team){
+                    	if(model.attributes.team_1.id == team || model.attributes.team_2.id == team){
+                    		self.renderSchedule(model);
+                    	}
+                    }
+                    else{
+                    	self.renderSchedule(model);
+                	}
+                });
             },
 
             error: function(data){

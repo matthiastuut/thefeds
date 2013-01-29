@@ -26,6 +26,9 @@
         // Fetch
       	this.collection.fetch({
       	  success: function(data) {
+          $(".preloader").remove();
+          $(".content").addClass("animated fadeInDown");
+          $(".backbtn").show();
             var sets = [];
     	      //console.log(self.collection.toJSON());
     	      _.each(self.collection.models, function(model){

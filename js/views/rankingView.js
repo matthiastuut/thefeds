@@ -35,8 +35,8 @@
 				$(".row").removeClass("selected");
 				$("."+teamID).parent().addClass("selected");
 				
-				$(".tabs a:first-child").attr("href", "/#/ranking/:"+teamID);
-				$(".tabs a:last-child").attr("href", "/#/schedule/:"+teamID);
+				$(".tabs a:first-child").attr("href", "#/ranking/"+teamID);
+				$(".tabs a:last-child").attr("href", "#/schedule/"+teamID);
 
 				
 				
@@ -57,6 +57,7 @@
 				  
 				  	$(".preloader").remove();
 				  	$(".content").addClass("animated fadeInDown");
+          			$(".backbtn").hide();
 
 				  	// empty the option
 				  	$("#teamselect").html("").append("<option value='0' disabled selected id='selectteam'>Selecteer een team</option>");	

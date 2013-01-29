@@ -54,6 +54,8 @@
 				
 				this.collection.fetch({
 				  success: function(data) {
+				  
+				  	$(".preloader").remove();
 				  		
 				  	// empty the option
 				  	$("#teamselect").html("").append("<option value='0' disabled selected id='selectteam'>Selecteer een team</option>");	

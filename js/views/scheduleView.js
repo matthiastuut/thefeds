@@ -41,12 +41,8 @@
 	},
 	
 	// Render the view
-    render: function () {
-
-
-
+    render: function (team) {
         var self = this ;
-
     	this.collection.fetch({
             // If the request succeeds, the success callback function is executed 
             success: function(data) {
@@ -60,6 +56,15 @@
                     console.log(self);
                 });
 
+                self.collection.reset(data, { silent: true });
+				console.log(self.filterType);
+		        var filterType = self.filterType,
+		            filtered = _.filter(self.collection.models, function (item) {
+		            return item.get('id').toLowerCase() === filterType;
+		        });
+		        console.log(filtered);
+		        this.collection.reset(filtered);
+
             },
 
             error: function(data){
@@ -71,15 +76,16 @@
 
 		this.$el.html(ScheduleTemplate);
 
-    	this.$el.find("ul#table").html('');
-		// _.each(this.collection.models, function (item) {
-  //       	this.renderSchedule(item);
-  //       }, this);
-        // this.$el.find("#filter").append(this.createSelect());
-
-
+    	
 
     },
+
+    renderTeam: function(team){
+			
+		this.render(team);
+		
+		
+	},
 
     renderSchedule: function (item) {
         var gameView = new GameScheduleScheduleView({

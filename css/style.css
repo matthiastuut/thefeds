@@ -335,3 +335,23 @@ form button{
 .row.selected{
 	background-color: rgba(0,0,0,.3);
 }
+
+
+
+.preloader{
+	width: 25%;
+	background: #000000;
+	background: rgba(0,0,0,.5);	
+	border-radius: .3em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -12.5%;
+	display: block;
+	color: #fff;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 5em 1em 1em;
+	font-weight: bold;
+	background: url('../images/ajax-loader.gif') no-repeat center 1em rgba(0,0,0,.5);
+}

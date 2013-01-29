@@ -10,17 +10,15 @@
       el: $(".content"),
   
       // Initialize view *(backbone method)*
-      initialize: function () {
+      initialize: function (game_id) {
         this.table = this.$el.find("#gameData");
-        // Specify collection for this view
-
         this.collection = new Game();
-        
       },
 
       // Render view *(backbone method)*
-      render: function () {
+      render: function (game_id) {
         self = this;
+        
 
         // set template on the content
         $(".content").html(GameTemplate);
@@ -28,15 +26,20 @@
         // Fetch
       	this.collection.fetch({
       	  success: function(data) {
+            var sets = [];
     	      //console.log(self.collection.toJSON());
     	      _.each(self.collection.models, function(model){
-    	          // set a resource uri on the model
-    	          //console.log("model data: ", model.toJSON());
-    	          // console.log("model: ", model);
+    	          
     	          model.url = model.get('resource_uri');
-    	          // console.log(model.url);
-                self.renderGame(model);
+
+                if(model.attributes.game_id == game_id){
+                  sets.push(model);
+                }
     	      });
+            console.log(sets[0].toJSON().game_sets);
+            _.each(sets[0].toJSON().game_sets, function(set){
+              self.renderGame(set);
+            });
     	    }
     	 });
   	
@@ -68,11 +71,11 @@
     this.$el.find("#gameData").append(setView.render().el);
   },
 
+  getGame: function (game_id) {
+    // Specify collection for this view
+    this.render(game_id);
+  }
 
-  showForm: function (e) {
-    e.preventDefault();
-      this.$el.find("#addSet").slideToggle();
-  },
   
 });
 

@@ -13,7 +13,7 @@
 <section id="schedule">
 	
     <!-- List with schedule -->
-	<ul id="table">
+	<ul id="table" class="list">
     </ul>
 
     <!-- Possibility to add -->
@@ -33,7 +33,7 @@
 <!-- Template for schedule list-->	
 <script id="scheduleTemplate" type="text/template"> 
         <a href="#/game/:<%= id %>">
-            <span class="date"><%= date %></span>
+            <span class="date"><%= start_time %></span>
             <span class="team home"><%= team_1.name %></span> 
             <span class="score">
                 <span><%= team_1_score %></span>

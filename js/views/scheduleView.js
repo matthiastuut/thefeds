@@ -64,7 +64,7 @@
             },
 
             error: function(data){
-                alert("Sorry! Data ophalen mislukt.");
+                // alert("Sorry! Data ophalen mislukt.");
             }
 
         });

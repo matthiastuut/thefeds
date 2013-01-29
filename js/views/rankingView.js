@@ -56,7 +56,8 @@
 				  success: function(data) {
 				  
 				  	$(".preloader").remove();
-				  		
+				  	$(".content").addClass("animated fadeInDown");
+
 				  	// empty the option
 				  	$("#teamselect").html("").append("<option value='0' disabled selected id='selectteam'>Selecteer een team</option>");	
 				  

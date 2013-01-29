@@ -28,6 +28,7 @@
 			},
 
 			showRanking: function (actions) {
+				$(".content").removeClass("animated fadeInDown");
 				rankingView.render();
 				console.log("Render Ranking");
 			},
@@ -48,11 +49,13 @@
 			
 
 			showGame: function (actions) {
+
 				gameView.getGame(actions);
 				console.log("Render Game");
 			},
 
 			defaultAction: function (actions) {
+			
 				rankingView.render();
 				console.log("Render Default Ranking");
 			}

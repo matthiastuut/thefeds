@@ -344,7 +344,7 @@ form button{
 
 
 
-.preloader{
+.preloader, .error {
 	width: 25%;
 	background: #000000;
 	background: rgba(0,0,0,.5);	
@@ -360,4 +360,19 @@ form button{
 	padding: 5em 1em 1em;
 	font-weight: bold;
 	background: url('../images/ajax-loader.gif') no-repeat center 1em rgba(0,0,0,.5);
+}
+
+.error {
+	width: 30%;
+	padding: 1em 0.5em 0.5em;
+
+	background: rgba(0,0,0,.5);
+	font-weight: normal;
+
+}
+
+.error strong {
+	font-size: 2em;
+	display: block;
+	margin-bottom: 10px;
 }

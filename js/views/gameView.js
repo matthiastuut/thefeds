@@ -44,6 +44,13 @@
               self.renderGame(set);
             });
     	    }
+          ,
+
+          error: function(data){
+              // error message
+              self.$el.html('<span class="error"><strong>Oops..</strong> er is iets foutgegaan</span>');
+
+          }
     	 });
   	
   	// this.collection.on("reset", this.render, this);

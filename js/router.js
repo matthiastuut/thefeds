@@ -19,10 +19,10 @@
 			
 			// Define routes to pages (hash urls #/page_name)
 			routes: {
-				'/schedule/:team'	:   'showScheduleTeam',
+				'/schedule/team'	:   'showScheduleTeam',
 				'/schedule'			:   'showSchedule',
-				'/game/:id'				:   'showGame',
-				'/ranking/:team'	: 	'showRankingTeam',
+				'/game/id'				:   'showGame',
+				'/ranking/team'	: 	'showRankingTeam',
 				'/ranking'			: 	'showRanking',		
 				'*path'				: 	'defaultAction'
 			},

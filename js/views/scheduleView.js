@@ -47,6 +47,8 @@
             // If the request succeeds, the success callback function is executed 
             success: function(data) {
                 // Loop through the fetched models 
+                $(".preloader").remove();
+				$(".content").addClass("animated fadeInDown");
                 _.each(self.collection.models, function(model){
 
                     // Set the url for each model

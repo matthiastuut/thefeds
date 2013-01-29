@@ -34,6 +34,8 @@
 				// add and remove classes
 				$(".row").removeClass("selected");
 				$("."+teamID).parent().addClass("selected");
+
+          		$(".backbtn").attr("href", "#/schedule/"+teamID);
 				
 				$(".tabs a:first-child").attr("href", "#/ranking/"+teamID);
 				$(".tabs a:last-child").attr("href", "#/schedule/"+teamID);
